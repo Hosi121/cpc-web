@@ -345,6 +345,46 @@
                 bottom: -40px;
             }
         }
+
+        /* Twitter（X）アイコン用の改良スタイル */
+        .social-icons {
+            display: flex;
+            gap: var(--space-2);
+            margin-bottom: var(--space-3);
+        }
+
+        .social-icon {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            border-radius: var(--border-radius-full);
+            transition: transform 0.2s ease, opacity 0.2s ease;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 60%;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.1);
+            opacity: 0.9;
+        }
+
+        /* Twitter/X アイコン */
+        .twitter-icon {
+            background-color: #000000;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z'/%3E%3C/svg%3E");
+        }
+
+        /* ウェブサイトアイコン */
+        .website-icon {
+            background-color: var(--ocean-blue);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A11.36 11.36 0 0 0 5.09 6.2c.37.33.78.58 1.2.8.67-.38 1.35-.64 2.05-.8a3 3 0 0 0-1.2-2.83 3 3 0 0 0-.35-.18L7.5 1.08zM4.25 3.55c.14-.39.3-.75.5-1.08C5.05 2.05 5.3 1.68 5.6 1.35 4.5 1.7 3.5 2.3 2.8 3.1c.5.17 1 .32 1.45.45zm-1.7 3.95c.04-1.07.2-2.09.45-3.01-.6-.27-1.2-.53-1.55-.67A7 7 0 0 0 .94 7.5h1.6zm1.4-2.74c-.8.19-1.6.3-2.4.36.25 1.07.4 2.16.4 3.26h2.99v-2.4c-1-.03-1.8-.17-2.6-.37zm2.6.37v2.4h2.99c.01-1.1.15-2.19.4-3.26-.8-.06-1.6-.17-2.4-.36-.19.5-.34 1.14-.46 1.86l-.13.4c-.2.28-.3.46-.4.5v-.14zm3-3.58c-.5.3-1.04.72-1.5 1.3-.37.55-.7 1.2-.95 1.9v.01c.8.19 1.6.3 2.4.36.45-1.2.65-2.35.5-3.55-.05-.1-.1-.15-.2-.12l-.25.2v-.1zM4.5 8.5c.03.89.18 1.75.45 2.5.8-.21 1.55-.45 2.2-.8l.2-.1c.43-.25.83-.54 1.2-.85-.19-.72-.42-1.35-.7-1.85-.7.25-1.41.5-2.07.7-.1.04-.21.08-.31.1-.1.03-.2.05-.3.08-.32.07-.64.21-.95.34zM8 10.8v-.03a32.3 32.3 0 0 0 3.35-1.13c.3-.9.5-1.93.56-3.05v-.06l-.01-.02c-.79.15-1.56.36-2.3.62h-.02a10.7 10.7 0 0 0-.93 3.67zm3.9-7.83c.26.64.41 1.38.45 2.1v.03a26.9 26.9 0 0 1 1.56.63c.03-.4.04-.83.04-1.23a7 7 0 0 0-2.05-1.53z'/%3E%3C/svg%3E");
+        }
+
+        /* リンクラベル（オプション） */
+        .link-label {
+            display: none;
+        }
     </style>
 </head>
 
@@ -363,6 +403,10 @@
                 </div>
                 <div class="card-body">
                     <h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">大塚淳</h3>
+                    <div class="social-icons">
+                        <a href="https://x.com/junotk_jp" target="_blank" class="social-icon twitter-icon"></a>
+                        <a href="https://www.philosophy.bun.kyoto-u.ac.jp/junotk/" target="_blank" class="social-icon website-icon"></a>
+                    </div>
                     <div class="tag-container mb-3">
                         <span class="tag">科学哲学</span><span class="tag">統計学</span><span class="tag">機械学習</span><span
                             class="tag">表現空間</span><span class="tag">情報幾何</span>
@@ -373,11 +417,6 @@
                     <div class="mt-3 text-italic">
                         科学哲学、特に統計学と機械学習の哲学を研究しています。最近では、(i) 圏論を用いた因果性のモデリング、(ii) 統計モデルの対称性・不変性、(iii)
                         機械学習における表現学習と哲学的「概念」論の間の関わり、などに関心があります。
-                    </div>
-                    <div class="link-group">
-                        <a href="https://x.com/junotk_jp" target="_blank">https://x.com/junotk_jp</a><a
-                            href="web site: https://www.philosophy.bun.kyoto-u.ac.jp/junotk/" target="_blank">web site:
-                            https://www.philosophy.bun.kyoto-u.ac.jp/junotk/</a>
                     </div>
                     <div class="papers">1. 統計学を哲学する
                         - https://www.unp.or.jp/ISBN/ISBN978-4-8158-1003-0.html
@@ -394,6 +433,10 @@
                 </div>
                 <div class="card-body">
                     <h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">片岩拓也</h3>
+                    <div class="social-icons">
+                        <a href="https://x.com/jirava_t" target="_blank" class="social-icon twitter-icon"></a>
+                        <a href="https://hosi121.github.io/portfolio/" target="_blank" class="social-icon website-icon"></a>
+                    </div>
                     <div class="tag-container mb-3">
                         <span class="tag">記号論</span><span class="tag">集団的予測符号化</span><span class="tag">ゲーム理論</span><span
                             class="tag">言語モデル</span><span class="tag">最適化</span><span class="tag">情報幾何</span><span
@@ -409,11 +452,6 @@
                         今回の合宿では，特に流動的な現在の世界の中，自分がどのように振舞うことができるのか考えたいと思っています．
                         よろしくお願いします．
                     </div>
-                    <div class="link-group">
-                        <a href="Xアカウント：https://x.com/jirava_t" target="_blank">Xアカウント：https://x.com/jirava_t</a><a
-                            href="webサイト：https://hosi121.github.io/portfolio/"
-                            target="_blank">webサイト：https://hosi121.github.io/portfolio/</a>
-                    </div>
                     <div class="papers">1. Enhancing LLM4Decompile with Obfuscated Source Code for Optimized Assembly
                         https://t.co/UBYkzw3Z6s</div>
                 </div>
@@ -424,6 +462,11 @@
                 </div>
                 <div class="card-body">
                     <h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">丸山隆一</h3>
+                    <div class="social-icons">
+                        <a href="https://x.com/rmaruy" target="_blank" class="social-icon twitter-icon"></a>
+                        <a href="https://note.com/symbol_emerg" target="_blank" class="social-icon website-icon" title="記号創発スタディノート"></a>
+                        <a href="https://www.youtube.com/playlist?list=PLZ3ERUqlfpWFOOyGYKMnFtWgpkP4-qVuG" target="_blank" class="social-icon website-icon" title="記号創発クロストーク"></a>
+                    </div>
                     <div class="tag-container mb-3">
                     </div>
                     <div class="quote mb-3">
@@ -432,14 +475,7 @@
                     <div class="mt-3 text-italic">
                         2025年1月より、記号創発システム論のアウトリーチ活動の企画・実施を担当しています。10年ほど前から記号創発システム論へは関心がありました。それとともに、日本初の超学際領域がどのようにコミュニティとして盛り上がっていけるのかという点にとても関心があります。当日は皆様の議論を聞きながら、議事録作成や今後のアウトリーチ展開の企画を担当したいと考えています。
                     </div>
-                    <div class="link-group">
-                        <a href="Xアカウント：https://x.com/rmaruy" target="_blank">Xアカウント：https://x.com/rmaruy</a><a
-                            href="記号創発スタディノート：https://note.com/symbol_emerg"
-                            target="_blank">記号創発スタディノート：https://note.com/symbol_emerg</a><a
-                            href="記号創発クロストーク：https://www.youtube.com/playlist?list=PLZ3ERUqlfpWFOOyGYKMnFtWgpkP4-qVuG"
-                            target="_blank">記号創発クロストーク：https://www.youtube.com/playlist?list=PLZ3ERUqlfpWFOOyGYKMnFtWgpkP4-qVuG</a>
-                    </div>
-                    <div class="papers">タイトル：「調査報告書 拡張する研究開発エコシステム」（※論文ではなくすみません）
+                    <div class="papers">タイトル：「調査報告書 拡張する研究開発エコシステム」
                         リンク：https://www.jst.go.jp/crds/report/CRDS-FY2022-RR-03.html
 
                         タイトル：「Detecting cells using non-negative matrix factorization on calcium imaging data」
@@ -452,16 +488,14 @@
                 </div>
                 <div class="card-body">
                     <h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">濱田太陽</h3>
+                    <div class="social-icons">
+                        <a href="https://sites.google.com/view/hirotaiyohamada/about" target="_blank" class="social-icon website-icon"></a>
+                    </div>
                     <div class="tag-container mb-3">
                         <span class="tag">記号幾何論</span><span class="tag">マルチエージェントとシングルエージェントの複数LLMと言語ゲームの関係性</span>
                     </div>
                     <div class="quote mb-3">
-                        集団的予測符号化とLLM、LLMの関係性
-                        海外グループの
-                    </div>
-                    <div class="link-group">
-                        <a href="https://sites.google.com/view/hirotaiyohamada/about"
-                            target="_blank">https://sites.google.com/view/hirotaiyohamada/about</a>
+                        集団的予測符号化とLLM、LLMの関係性．海外グループの
                     </div>
                     <div class="papers">1. Hamada H.T.*, Abe Y., Takata N., Taira M, Tanaka F.K. and Doya K*. (2024)
                         Optogenetic activation of dorsal raphe serotonin neurons induces brain-wide activation. Nat
@@ -477,6 +511,9 @@
                 </div>
                 <div class="card-body">
                     <h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">西本翔裕</h3>
+                    <div class="social-icons">
+                        <a href="https://x.com/sho_Westbook" target="_blank" class="social-icon twitter-icon"></a>
+                    </div>
                     <div class="tag-container mb-3">
                         <span class="tag">システム神経科学</span>
                         <span class="tag">行動主義心理学</span>
@@ -489,10 +526,6 @@
                     <div class="mt-3 text-italic">
                         東京大学大学院総合文化研究科、博士課程の西本と申します。物理的な時間とは異なる脳の時間に興味があり、研究室ではマウスを対象にシステム神経科学の実験研究をしています。また、かねてより集団サイズを大きくすることではじめて現れるような行動にも関心があり、合宿ではそのような現象とCPCとの関連を考えたいと思っています。CPCと意識、についても密な議論をしたいです！よろしくお願いします。
                     </div>
-                    <div class="link-group">
-                        <a href="Xアカウント: https://x.com/sho_westbook?s=21&t=0xxhPyPygCFYhWyGqrglVA"
-                            target="_blank">Xアカウント: https://x.com/sho_westbook?s=21&t=0xxhPyPygCFYhWyGqrglVA</a>
-                    </div>
                 </div>
             </div>
             <div class="card">
@@ -501,6 +534,10 @@
                 </div>
                 <div class="card-body">
                     <h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">堀部和也</h3>
+                    <div class="social-icons">
+                        <a href="https://x.com/khoribe3" target="_blank" class="social-icon twitter-icon"></a>
+                        <a href="https://kazuya-horibe.netlify.app/en/" target="_blank" class="social-icon website-icon"></a>
+                    </div>
                     <div class="tag-container mb-3">
                         <span class="tag">文化進化</span><span class="tag">社会学習</span><span class="tag">メタゲーム</span><span
                             class="tag">ソーシャルホメオスタシス</span><span class="tag">オートポイエーシス</span><span
@@ -517,11 +554,6 @@
                         現在は、理論生物学、コミュニケーションロボット、そして文化進化の視点を往復しながら、集団意思決定システムの「エネルギー地形」と経路依存性について探っています。具体的には、人間集団へ人工システムがどのように非言語・言語的に介入しうるのか、その設計指針としてのエネルギー地形を活用する方法や、Multi
                         LLM（大規模言語モデル）エージェントがもたらす文化進化、さらにはそれらエージェントが参加するルール改変ゲームといったテーマに関心かあります。また、学寮という生活空間をフィールドとした文化進化のエスノグラフィにも関心があり、人間力はいかに育まれるのかを探る研究も進めています。今回の合宿では、異なる分野の皆さんと意見を交わしながら、人工システムと人間社会の相互作用が生む新たな「意味」や「文化」について議論していければと楽しみにしています。どうぞよろしくお願いします。
                     </div>
-                    <div class="link-group">
-                        <a href="Xアカウント：https://x.com/khoribe3" target="_blank">Xアカウント：https://x.com/khoribe3</a><a
-                            href="webサイト：https://kazuya-horibe.netlify.app/en/"
-                            target="_blank">webサイト：https://kazuya-horibe.netlify.app/en/</a>
-                    </div>
                 </div>
             </div>
             <div class="card">
@@ -530,6 +562,10 @@
                 </div>
                 <div class="card-body">
                     <h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">吉田尚人</h3>
+                    <div class="social-icons">
+                        <a href="https://x.com/movingsloth" target="_blank" class="social-icon twitter-icon"></a>
+                        <a href="https://sites.google.com/view/movingsloth/home" target="_blank" class="social-icon website-icon"></a>
+                    </div>
                     <div class="tag-container mb-3">
                         <span class="tag">強化学習</span><span class="tag">恒常性</span><span class="tag">身体性</span><span
                             class="tag">マルチエージェント強化学習</span><span class="tag">集団的予測符号化</span><span
@@ -545,11 +581,6 @@
                     <div class="mt-3 text-italic">
                         京大情報学研究科の吉田です。主に強化学習とロボティクス、特に汎用的な動機づけの観点での恒常性に興味があり、その中で現在はマルチエージェント強化学習への応用可能性の観点でCPCのプロジェクトに参画しています。よろしくお願いします。
                     </div>
-                    <div class="link-group">
-                        <a href="https://x.com/movingsloth" target="_blank">https://x.com/movingsloth</a><a
-                            href="https://sites.google.com/view/movingsloth/home"
-                            target="_blank">https://sites.google.com/view/movingsloth/home</a>
-                    </div>
                 </div>
             </div>
             <div class="card">
@@ -558,6 +589,9 @@
                 </div>
                 <div class="card-body">
                     <h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">鈴木 大地</h3>
+                    <div class="social-icons">
+                        <a href="https://x.com/suz_dg" target="_blank" class="social-icon twitter-icon"></a>
+                    </div>
                     <div class="tag-container mb-3">
                         <span class="tag">生命記号論</span><span class="tag">科学哲学</span><span class="tag">進化</span><span
                             class="tag">表象</span><span class="tag">意識</span>
@@ -569,9 +603,6 @@
                     </div>
                     <div class="mt-3 text-italic">
                         脳や行動、意識の進化について、進化生物学、神経科学、科学哲学など多方面から研究しております。最近は生命記号論の批判的検討を通して、意味の創発にも興味をもっております。今回の合宿では、言語にとどまらない広い視点から記号創発システム論や集合的予測符号化について議論できればと思います。どうぞよろしくお願いいたします。
-                    </div>
-                    <div class="link-group">
-                        <a href="Xアカウント：https://x.com/suz_dg" target="_blank">Xアカウント：https://x.com/suz_dg</a>
                     </div>
                     <div class="papers">タイトル：The anthropic principle for the evolutionary biology of consciousness:
                         Beyond anthropocentrism and anthropomorphism
@@ -590,6 +621,9 @@
                 </div>
                 <div class="card-body">
                     <h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">佐治伸郎</h3>
+                    <div class="social-icons">
+                        <a href="https://x.com/non_svch" target="_blank" class="social-icon twitter-icon"></a>
+                    </div>
                     <div class="tag-container mb-3">
                         <span class="tag">言語</span><span class="tag">記号論</span><span class="tag">現象学</span><span
                             class="tag">集団的予測符号化</span><span class="tag">心理学</span><span class="tag">言語習得</span>
@@ -600,9 +634,6 @@
                     </div>
                     <div class="mt-3 text-italic">
                         言語習得および記号コミュニケーションの発達，そしてこのような発達が推論や思考にどのように影響を与えていくのかという問題に興味があります．実験心理学の方法を用いてこれらの問題に取り組んでいます．今回は様々な分野の方々と議論するのを楽しみにしております．
-                    </div>
-                    <div class="link-group">
-                        <a href="https://x.com/non_svch" target="_blank">https://x.com/non_svch</a>
                     </div>
                     <div class="papers">タイトル：「信号、記号、言語へ:コミュニケーションが紡ぐ意味の体系」
                         リンク：https://amzn.asia/d/92M8g6O
@@ -617,6 +648,10 @@
                 </div>
                 <div class="card-body">
                     <h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">谷口彰</h3>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/akira.taniguchi.37b/" target="_blank" class="social-icon website-icon"></a>
+                        <a href="https://sites.google.com/site/ataniguchi0403/" target="_blank" class="social-icon website-icon"></a>
+                    </div>
                     <div class="tag-container mb-3">
                         <span class="tag">言語創発</span><span class="tag">記号創発ロボティクス</span><span
                             class="tag">認知発達ロボティクス</span><span class="tag">人工生命</span><span
@@ -629,12 +664,6 @@
                     </div>
                     <div class="mt-3 text-italic">
                         私は、ロボットが環境から知識を獲得し、理解するプロセスに興味を持ち、記号創発ロボティクスの研究を進めています。特に、確率的生成モデルを用いた場所概念や語彙の獲得、また海馬体を参考にした脳参照アーキテクチャの構築をテーマに、ロボットの学習や認知の仕組みを探求しています。さらに、ロボットが獲得した知識を活用し、生活支援への応用にも取り組んでいます。今回の合宿では、異なる分野の視点や知見を共有し、新たな発見ができることを楽しみにしています。どうぞよろしくお願いします。
-                    </div>
-                    <div class="link-group">
-                        <a href="Facebook：https://www.facebook.com/akira.taniguchi.37b/"
-                            target="_blank">Facebook：https://www.facebook.com/akira.taniguchi.37b/</a><a
-                            href="webサイト：https://sites.google.com/site/ataniguchi0403/"
-                            target="_blank">webサイト：https://sites.google.com/site/ataniguchi0403/</a>
                     </div>
                     <div class="papers">Akira Taniguchi, Tadahiro Taniguchi, and Angelo Cangelosi, "Cross-Situational
                         Learning with Bayesian Generative Models for Multimodal Category and Word Learning in Robots",
@@ -659,6 +688,9 @@
                 </div>
                 <div class="card-body">
                     <h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">日永田智絵</h3>
+                    <div class="social-icons">
+                        <a href="https://www.hieida.com/" target="_blank" class="social-icon website-icon"></a>
+                    </div>
                     <div class="tag-container mb-3">
                         <span class="tag">感情</span><span class="tag">発達</span><span class="tag">生命</span><span
                             class="tag">植物</span><span class="tag">ロボティクス</span><span class="tag">内受容感覚</span><span
@@ -669,9 +701,6 @@
                     </div>
                     <div class="mt-3 text-italic">
                         現在、感情を中心に構成論的アプローチを実施しており、『感情発達ロボティクス』という領域を立ち上げていきたいと考えております。本会で記号創発システムについて、様々な方と議論できることを楽しみにしております。よろしくお願いいたします。
-                    </div>
-                    <div class="link-group">
-                        <a href="https://www.hieida.com/" target="_blank">https://www.hieida.com/</a>
                     </div>
                     <div class="papers">タイトル：「社会的感情とロボットについて」
                         リンク：https://www.tandfonline.com/doi/full/10.1080/01691864.2021.2012512
@@ -704,6 +733,9 @@
                 </div>
                 <div class="card-body">
                     <h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">藤澤逸平</h3>
+                    <div class="social-icons">
+                        <a href="https://x.com/ifuiaa" target="_blank" class="social-icon twitter-icon"></a>
+                    </div>
                     <div class="tag-container mb-3">
                         <span class="tag">AGI</span><span class="tag">リーズニング</span><span class="tag">記号の創発</span><span
                             class="tag">言語の創発</span><span class="tag">表象</span>
@@ -714,9 +746,6 @@
                     <div class="mt-3 text-italic">
                         この数年、AIと人間の知的活動のギャップはどこにあるのか、AGIを作るにはどうすればよいか、というようなことに関心を持ってきていました。特にその中でもリーズニング、論理的推論あたりはある程度の進展が見込まれるものと思っていました。昨年は、推論スケーリングをキーワードに研究が進み、またo1シリーズが出たことを皮切りに、各社からリーズニングに強いモデルが出始めました。これは一つの方向ではあるものの、依然としてギャップはあるでしょうし、どこかで行き詰まることもあるかもしれません。特に一つの方向性としては「新たに定義すること」あたりが次の焦点になってくるのではないかと感じています。これはおそらく記号や言語の創発と関連がありそうで、このあたりについて議論できればと思います。
                     </div>
-                    <div class="link-group">
-                        <a href="https://x.com/ifuiaa" target="_blank">https://x.com/ifuiaa</a>
-                    </div>
                     <div class="papers">https://arxiv.org/abs/2410.03117 https://arxiv.org/abs/2211.07727</div>
                 </div>
             </div>
@@ -726,6 +755,9 @@
                 </div>
                 <div class="card-body">
                     <h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">安田裕子</h3>
+                    <div class="social-icons">
+                        <a href="https://jatq.jp/index.html" target="_blank" class="social-icon website-icon"></a>
+                    </div>
                     <div class="tag-container mb-3">
                         <span class="tag">語り（ナラティブ）</span>
                         <span class="tag">意味</span>
@@ -741,12 +773,6 @@
                     </div>
                     <div class="mt-3 text-italic">
                         はじめまして。質的なアプローチ、とくにインタビューの手法を用いて、人のライフに迫る研究をしています。専門は、臨床心理学、生涯発達心理学です。人生には、発達的に陥りやすい危機と偶発的に遭遇しうる危機がありますが、人が、こういった危機に向き合いつつ、恢復していく様相に関心をもって探究をしています。また、人のそうした時間的な変容プロセスの様相を、転換点やありうる選択径路に留意しつつとらえる質的研究法TEA（複線径路等至性アプローチ）を、共同で開発・精緻化してきました。このTEAは記号論的文化心理学に依拠しており、記号創発システム論との親和性が高いと考えられます。時空間を共にした濃密な合宿でのそれぞれの専門分野をベースとしたディスカッションからなにか化学反応が生みだされるかも！ととても楽しみにしています。どうぞよろしくお願いいたします。
-                    </div>
-                    <div class="link-group">
-                        <a href="webサイト：" target="_blank">webサイト：</a><a href="TEAと質的探究学会　https://jatq.jp/index.html"
-                            target="_blank">TEAと質的探究学会　https://jatq.jp/index.html</a><a
-                            href="TEA　https://sites.google.com/site/kokorotem/whatistem"
-                            target="_blank">TEA　https://sites.google.com/site/kokorotem/whatistem</a>
                     </div>
                     <div class="papers">タイトル：「不妊という経験を通じた自己の問い直し過程―治療では子どもが授からなかった当事者の選択岐路から」
                         リンク：https://www.jstage.jst.go.jp/article/jaqp/4/1/4_201/_pdf/-char/ja
@@ -808,6 +834,10 @@
                 </div>
                 <div class="card-body">
                     <h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">久保田はな</h3>
+                    <div class="social-icons">
+                        <a href="https://x.com/veloce_ponty" target="_blank" class="social-icon twitter-icon"></a>
+                        <a href="https://gyoseki.ritsumei.ac.jp/ritgshp/k03/resid/S009933;jsessionid=1C72092388A8C18A79CC528C7732EAB8" target="_blank" class="social-icon website-icon"></a>
+                    </div>
                     <div class="tag-container mb-3">
                         <span class="tag">現象学</span><span class="tag">表象</span><span class="tag">時間論</span><span
                             class="tag">情動</span><span class="tag">クオリア</span><span class="tag">美学</span><span
@@ -820,12 +850,6 @@
                         はじめまして、立命館大学大学院で哲学専修に在籍している久保田はなと申します。私は、身体と空間の関係性や、感性・情動がどのように芸術の美的体験を生み出すのかを研究テーマとしています。所属ゼミでは、メルロ＝ポンティの思想のなかで、現象学的な視点を通して、私たちの日常的な「感じる」という体験が、個々人の芸術的な体験や、公的な美学の学問的展開にどのように反映されるのかを探求しています。
                         イメージとしては、カントの判断力批判の「崇高」に位置するものがちょっとずつ形を変えて認識の枠組みに入り込んでくることがどうやって起こっているのかが気になっています。
                     </div>
-                    <div class="link-group">
-                        <a href="Xアカウント：https://x.com/veloce_ponty"
-                            target="_blank">Xアカウント：https://x.com/veloce_ponty</a><a
-                            href="立命館大学院生研究業績サイト：https://gyoseki.ritsumei.ac.jp/ritgshp/k03/resid/S009933;jsessionid=1C72092388A8C18A79CC528C7732EAB8"
-                            target="_blank">立命館大学院生研究業績サイト：https://gyoseki.ritsumei.ac.jp/ritgshp/k03/resid/S009933;jsessionid=1C72092388A8C18A79CC528C7732EAB8</a>
-                    </div>
                 </div>
             </div>
             <div class="card">
@@ -834,6 +858,9 @@
                 </div>
                 <div class="card-body">
                     <h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">山下祐一</h3>
+                    <div class="social-icons">
+                        <a href="https://researchmap.jp/yamay" target="_blank" class="social-icon website-icon"></a>
+                    </div>
                     <div class="tag-container mb-3">
                         <span class="tag">計算論的精神医学</span><span class="tag">予測情報処理</span><span
                             class="tag">ニューロロボティクス</span><span class="tag">リカレントニューラルネットワーク</span><span
@@ -845,9 +872,6 @@
                     <div class="mt-3 text-italic">
                         ​計算論的精神医学の立場から、ニューラルネットワークモデルやロボットを用いた構成論的アプローチを通じて、精神疾患の病態メカニズムの解明を目指しています。
                         集団レベルの予測情報処理・能動的推論という観点が、精神障害理解に貢献する可能性に興味をもっています。
-                    </div>
-                    <div class="link-group">
-                        <a href="https://researchmap.jp/yamay" target="_blank">https://researchmap.jp/yamay</a>
                     </div>
                     <div class="papers">Idei, H., Suzuki, K., & Yamashita, Y. (2024). Awareness of being: A
                         computational neurophenomenological model of mindfulness, mind-wandering, and meta-attentional
@@ -863,6 +887,9 @@
                 </div>
                 <div class="card-body">
                     <h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">原光樹</h3>
+                    <div class="social-icons">
+                        <a href="https://x.com/harako95" target="_blank" class="social-icon twitter-icon"></a>
+                    </div>
                     <div class="tag-container mb-3">
                         <span class="tag">社会学</span><span class="tag">クィア理論</span><span class="tag">精神分析</span><span
                             class="tag">エスノメソドロジー</span><span class="tag">情報社会論</span><span
@@ -902,9 +929,6 @@
                         「記号創発システム論」は文理問わず多様なプレイヤーが、共通の問いを探究していける「プラットフォーム」のような理論だと思っています。
                         これを機会にそんなプラットフォームに集う方々と議論し、仲間になり、これからの仕事の種をたくさんつくりたい！そして、本（『記号創発システム論』）をもっと売りたい！
                         下心満載でのぞんでいきたいと思っています。よろしくお願いいたします。
-                    </div>
-                    <div class="link-group">
-                        <a href="Xアカウント：https://x.com/harako95" target="_blank">Xアカウント：https://x.com/harako95</a>
                     </div>
                     <div class="papers">＞
                         記号創発システム論
