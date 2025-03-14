@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CPC合宿招待メンバー</title>
+<style>
+:root {
+--primary-blue: #1a73e8;
+--light-blue: #e8f0fe;
+--dark-blue: #174ea6;
+--ocean-blue: #0288d1;
+--deep-blue: #01579b;
+--white: #ffffff;
+--gray-100: #f8f9fa;
+--gray-200: #e9ecef;
+--gray-800: #343a40;
+--shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+--shadow-md: 0 6px 18px rgba(0, 0, 0, 0.1);
+--shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.15);
+--border-radius-sm: 4px;
+--border-radius-md: 10px;
+--border-radius-lg: 16px;
+--border-radius-full: 50%;
+--space-1: 0.25rem;
+--space-2: 0.5rem;
+--space-3: 1rem;
+--space-4: 1.5rem;
+--space-5: 2rem;
+--space-6: 3rem;
+}
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+body {
+background: linear-gradient(135deg, var(--light-blue), #cce7ff);
+color: var(--gray-800);
+line-height: 1.6;
+}
+a {
+text-decoration: none;
+color: var(--primary-blue);
+transition: color 0.2s ease;
+}
+a:hover {
+color: var(--dark-blue);
+text-decoration: underline;
+}
+.text-xl {
+font-size: 2.5rem;
+}
+.text-lg {
+font-size: 1.8rem;
+}
+.text-md {
+font-size: 1.5rem;
+}
+.text-sm {
+font-size: 0.8rem;
+}
+.text-italic {
+font-style: italic;
+white-space: pre-wrap;
+}
+.text-gradient {
+background: linear-gradient(to right, #ffffff, #e3f2fd);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+}
+.font-bold {
+font-weight: 600;
+}
+.font-light {
+font-weight: 300;
+}
+.container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 var(--space-5);
+}
+.grid {
+display: grid;
+gap: var(--space-5);
+}
+.grid-cols-auto {
+grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+.mt-1 { margin-top: var(--space-1); }
+.mt-2 { margin-top: var(--space-2); }
+.mt-3 { margin-top: var(--space-3); }
+.mt-4 { margin-top: var(--space-4); }
+.mt-5 { margin-top: var(--space-5); }
+.mt-6 { margin-top: var(--space-6); }
+.mb-1 { margin-bottom: var(--space-1); }
+.mb-2 { margin-bottom: var(--space-2); }
+.mb-3 { margin-bottom: var(--space-3); }
+.mb-4 { margin-bottom: var(--space-4); }
+.mb-5 { margin-bottom: var(--space-5); }
+.pt-3 { padding-top: var(--space-3); }
+.pt-4 { padding-top: var(--space-4); }
+.pt-5 { padding-top: var(--space-5); }
+.pb-3 { padding-bottom: var(--space-3); }
+.pb-4 { padding-bottom: var(--space-4); }
+.pb-5 { padding-bottom: var(--space-5); }
+.p-1 { padding: var(--space-1); }
+.p-2 { padding: var(--space-2); }
+.p-3 { padding: var(--space-3); }
+.p-4 { padding: var(--space-4); }
+.p-5 { padding: var(--space-5); }
+.header {
+background: linear-gradient(to right, var(--deep-blue), var(--ocean-blue));
+color: white;
+padding: var(--space-5) 0;
+text-align: center;
+box-shadow: var(--shadow-sm);
+}
+.card {
+background: var(--white);
+border-radius: var(--border-radius-md);
+overflow: hidden;
+box-shadow: var(--shadow-md);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+transform: translateY(-5px);
+box-shadow: var(--shadow-lg);
+}
+.card-header {
+background: linear-gradient(to right, var(--ocean-blue), #4fc3f7);
+color: white;
+padding: var(--space-4);
+position: relative;
+}
+.card-body {
+padding: var(--space-4);
+padding-top: var(--space-5);
+}
+.profile-image {
+width: 100px;
+height: 100px;
+border-radius: var(--border-radius-full);
+object-fit: cover;
+position: absolute;
+bottom: -50px;
+right: 20px;
+border: 4px solid white;
+background-color: #e1f5fe;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 2rem;
+color: var(--ocean-blue);
+}
+.no-image {
+}
+.tag-container {
+display: flex;
+flex-wrap: wrap;
+gap: var(--space-2);
+}
+.tag {
+background-color: var(--light-blue);
+color: var(--primary-blue);
+padding: var(--space-1) var(--space-2);
+border-radius: var(--border-radius-lg);
+font-size: 0.8rem;
+}
+.quote {
+padding: var(--space-3);
+background-color: var(--gray-100);
+border-left: 3px solid var(--ocean-blue);
+border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;
+white-space: pre-wrap;
+}
+.link-group {
+display: flex;
+flex-wrap: wrap;
+gap: var(--space-3);
+margin-top: var(--space-3);
+}
+.papers {
+background-color: var(--gray-100);
+padding: var(--space-3);
+border-radius: var(--border-radius-sm);
+white-space: pre-wrap;
+margin-top: var(--space-3);
+}
+.wave-bg {
+position: fixed;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 200px;
+background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%230288d1" fill-opacity="0.2" d="M0,64L48,80C96,96,192,128,288,128C384,128,480,96,576,106.7C672,117,768,171,864,165.3C960,160,1056,96,1152,74.7C1248,53,1344,75,1392,85.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+background-size: cover;
+z-index: -1;
+}
+.footer {
+text-align: center;
+color: var(--deep-blue);
+position: relative;
+z-index: 1;
+}
+.text-center { text-align: center; }
+.flex { display: flex; }
+.flex-wrap { flex-wrap: wrap; }
+.gap-1 { gap: var(--space-1); }
+.gap-2 { gap: var(--space-2); }
+.gap-3 { gap: var(--space-3); }
+@media (max-width: 768px) {
+.grid-cols-auto {
+grid-template-columns: 1fr;
+}
+.text-xl {
+font-size: 2rem;
+}
+.profile-image {
+width: 80px;
+height: 80px;
+bottom: -40px;
+}
+}
+</style>
+</head>
+<body>
+<header class="header">
+<div class="container">
+<h1 class="text-xl text-gradient mb-3">CPC合宿招待メンバー</h1>
+<p class="font-light">集合的予測符号化・記号論・AI・ロボティクスなど多分野の交差点</p>
+</div>
+</header>
+<main class="container mt-6">
+<div class="grid grid-cols-auto">
+<div class="card">
+<div class="card-header">
+<div class="profile-image no-image">大</div>
+</div>
+<div class="card-body">
+<h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">大塚淳</h3>
+<div class="tag-container mb-3">
+<span class="tag">科学哲学</span><span class="tag">統計学</span><span class="tag">機械学習</span><span class="tag">表現空間</span><span class="tag">情報幾何</span>
+</div>
+<div class="quote mb-3">
+CPC-MS論文で林さんが示唆したパラダイム論との関わりについて、議論したいです
+</div>
+<div class="mt-3 text-italic">
+科学哲学、特に統計学と機械学習の哲学を研究しています。最近では、(i) 圏論を用いた因果性のモデリング、(ii) 統計モデルの対称性・不変性、(iii) 機械学習における表現学習と哲学的「概念」論の間の関わり、などに関心があります。
+</div>
+<div class="link-group">
+<a href="https://x.com/junotk_jp" target="_blank">https://x.com/junotk_jp</a><a href="web site: https://www.philosophy.bun.kyoto-u.ac.jp/junotk/" target="_blank">web site: https://www.philosophy.bun.kyoto-u.ac.jp/junotk/</a>
+</div>
+<div class="papers">1. 統計学を哲学する
+- https://www.unp.or.jp/ISBN/ISBN978-4-8158-1003-0.html
+2. What Machine Learning Tells Us About the Mathematical Structure of Concepts
+- https://arxiv.org/abs/2408.15507
+- youtube: https://www.youtube.com/watch?v=Lqt7TgYk8rU
+3. On the Equivalence of Causal Models: A Category-Theoretic Approach
+- https://arxiv.org/abs/2201.06981</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<div class="profile-image no-image">片</div>
+</div>
+<div class="card-body">
+<h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">片岩拓也</h3>
+<div class="tag-container mb-3">
+<span class="tag">記号論</span><span class="tag">集団的予測符号化</span><span class="tag">ゲーム理論</span><span class="tag">言語モデル</span><span class="tag">最適化</span><span class="tag">情報幾何</span><span class="tag">セキュリティ</span><span class="tag">マルチモーダル</span>
+</div>
+<div class="quote mb-3">
+とくに非協力的な言語ゲーム上での記号創発に興味があります．また，記号創発の数理理論の発展・限界や，そこから得られる示唆について興味があります．
+アカデミアや知的生産が今後10年でどう変化するのか，私たちはどのように対応するのか議論したいです．
+</div>
+<div class="mt-3 text-italic">
+はじめまして．片岩と申します．
+普段は言語モデルの内部機序を探っています．モデルを理解することでモデルへの効率化につなげようとしています．
+今回の合宿では，特に流動的な現在の世界の中，自分がどのように振舞うことができるのか考えたいと思っています．
+よろしくお願いします．
+</div>
+<div class="link-group">
+<a href="Xアカウント：https://x.com/jirava_t" target="_blank">Xアカウント：https://x.com/jirava_t</a><a href="webサイト：https://hosi121.github.io/portfolio/" target="_blank">webサイト：https://hosi121.github.io/portfolio/</a>
+</div>
+<div class="papers">1. Enhancing LLM4Decompile with Obfuscated Source Code for Optimized Assembly
+https://t.co/UBYkzw3Z6s</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<div class="profile-image no-image">丸</div>
+</div>
+<div class="card-body">
+<h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">丸山隆一</h3>
+<div class="tag-container mb-3">
+<span class="tag">nan</span>
+</div>
+<div class="quote mb-3">
+アウトリーチチームとして、Campの議論を効果的な対外発信につなげることができればと思っています。アウトリーチ活動に関わってみたい方を絶賛募集中です！
+</div>
+<div class="mt-3 text-italic">
+2025年1月より、記号創発システム論のアウトリーチ活動の企画・実施を担当しています。10年ほど前から記号創発システム論へは関心がありました。それとともに、日本初の超学際領域がどのようにコミュニティとして盛り上がっていけるのかという点にとても関心があります。当日は皆様の議論を聞きながら、議事録作成や今後のアウトリーチ展開の企画を担当したいと考えています。
+</div>
+<div class="link-group">
+<a href="Xアカウント：https://x.com/rmaruy" target="_blank">Xアカウント：https://x.com/rmaruy</a><a href="記号創発スタディノート：https://note.com/symbol_emerg" target="_blank">記号創発スタディノート：https://note.com/symbol_emerg</a><a href="記号創発クロストーク：https://www.youtube.com/playlist?list=PLZ3ERUqlfpWFOOyGYKMnFtWgpkP4-qVuG" target="_blank">記号創発クロストーク：https://www.youtube.com/playlist?list=PLZ3ERUqlfpWFOOyGYKMnFtWgpkP4-qVuG</a>
+</div>
+<div class="papers">タイトル：「調査報告書 拡張する研究開発エコシステム」（※論文ではなくすみません）
+リンク：https://www.jst.go.jp/crds/report/CRDS-FY2022-RR-03.html
+
+タイトル：「Detecting cells using non-negative matrix factorization on calcium imaging data」
+リンク：https://doi.org/10.1016/j.neunet.2014.03.007</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<div class="profile-image no-image">濱</div>
+</div>
+<div class="card-body">
+<h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">濱田太陽</h3>
+<div class="tag-container mb-3">
+<span class="tag">記号幾何論:</span><span class="tag">記号同士が幾何的構造をもち、個人や集団が持つ内部表現にはvariationにも法則性がある</span><span class="tag">マルチエージェントとシングルエージェントの複数</span><span class="tag">LLMと言語ゲームの関係性:</span><span class="tag">言語使用から記号の関係性をLLMが学習している</span>
+</div>
+<div class="quote mb-3">
+集団的予測符号化とLLM、LLMの関係性
+海外グループの
+</div>
+<div class="mt-3 text-italic">
+nan
+</div>
+<div class="link-group">
+<a href="https://sites.google.com/view/hirotaiyohamada/about" target="_blank">https://sites.google.com/view/hirotaiyohamada/about</a>
+</div>
+<div class="papers">1. Hamada H.T.*, Abe Y.,  Takata N., Taira M, Tanaka F.K. and Doya K*. (2024) Optogenetic activation of dorsal raphe serotonin neurons induces brain-wide activation. Nat Commun 15, 4152. https://doi.org/10.1038/s41467-024-48489-6
+2. Hamada, H.T., Kanai, R. AI agents for facilitating social interactions and wellbeing. AAAI 2022 Spring Symposia. https://ceur-ws.org/Vol-3276/
+3. 藤澤逸平, 山田祐樹, 川北源二, 濱田太陽. (2024) 『言語モデルによる心理学的構成概念の再構成』言語処理学会2024 https://osf.io/87f9j</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<div class="profile-image no-image">西</div>
+</div>
+<div class="card-body">
+<h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">西本翔裕</h3>
+<div class="tag-container mb-3">
+<span class="tag">システム神経科学、行動主義心理学、時間の哲学、意識</span>
+</div>
+<div class="quote mb-3">
+CPCは通常の予測符号化理論やFEPと比較して、何を新しく予言するのか？個体の脳の神経活動としてどのように表れるのか？他の理論では説明できないような個体の行動の説明に役立つのか？意識とはどう関係するのか？
+</div>
+<div class="mt-3 text-italic">
+東京大学大学院総合文化研究科、博士課程の西本と申します。物理的な時間とは異なる脳の時間に興味があり、研究室ではマウスを対象にシステム神経科学の実験研究をしています。また、かねてより集団サイズを大きくすることではじめて現れるような行動にも関心があり、合宿ではそのような現象とCPCとの関連を考えたいと思っています。CPCと意識、についても密な議論をしたいです！よろしくお願いします。
+</div>
+<div class="link-group">
+<a href="Xアカウント: https://x.com/sho_westbook?s=21&t=0xxhPyPygCFYhWyGqrglVA" target="_blank">Xアカウント: https://x.com/sho_westbook?s=21&t=0xxhPyPygCFYhWyGqrglVA</a>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<div class="profile-image no-image">堀</div>
+</div>
+<div class="card-body">
+<h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">堀部和也</h3>
+<div class="tag-container mb-3">
+<span class="tag">文化進化</span><span class="tag">社会学習</span><span class="tag">メタゲーム</span><span class="tag">ソーシャルホメオスタシス</span><span class="tag">オートポイエーシス</span><span class="tag">ヒューマンロボットインタラクション</span>
+</div>
+<div class="quote mb-3">
+集団意思決定システムのエネルギー地形とその経路依存性
+人間集団への人工システムによる非言語・言語的な介入とその設計指針としてのエネルギー地形
+Multi LLM agentsの文化進化
+Multi LLM agentsによるルール改変ゲーム
+学寮における文化進化のエスノグラフィ：人間力は何によって培われるのか？
+</div>
+<div class="mt-3 text-italic">
+現在は、理論生物学、コミュニケーションロボット、そして文化進化の視点を往復しながら、集団意思決定システムの「エネルギー地形」と経路依存性について探っています。具体的には、人間集団へ人工システムがどのように非言語・言語的に介入しうるのか、その設計指針としてのエネルギー地形を活用する方法や、Multi LLM（大規模言語モデル）エージェントがもたらす文化進化、さらにはそれらエージェントが参加するルール改変ゲームといったテーマに関心かあります。また、学寮という生活空間をフィールドとした文化進化のエスノグラフィにも関心があり、人間力はいかに育まれるのかを探る研究も進めています。今回の合宿では、異なる分野の皆さんと意見を交わしながら、人工システムと人間社会の相互作用が生む新たな「意味」や「文化」について議論していければと楽しみにしています。どうぞよろしくお願いします。
+</div>
+<div class="link-group">
+<a href="Xアカウント：https://x.com/khoribe3" target="_blank">Xアカウント：https://x.com/khoribe3</a><a href="webサイト：https://kazuya-horibe.netlify.app/en/" target="_blank">webサイト：https://kazuya-horibe.netlify.app/en/</a>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<div class="profile-image no-image">吉</div>
+</div>
+<div class="card-body">
+<h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">吉田尚人</h3>
+<div class="tag-container mb-3">
+<span class="tag">強化学習</span><span class="tag">恒常性</span><span class="tag">身体性</span><span class="tag">マルチエージェント強化学習</span><span class="tag">集団的予測符号化</span><span class="tag">ロボティクス</span><span class="tag">計算論的神経科学</span>
+</div>
+<div class="quote mb-3">
+1. CPCの把握：CPCが言っていることと言っていないこと
+2. 1を踏まえた、現状のCPCの数理的な限界点
+3. CPCの工学的応用・適用範囲の可能性
+4. 現状の限界点を踏まえた拡張可能性
+5. 数理的により整備されたほうが良いポイントなど
+</div>
+<div class="mt-3 text-italic">
+京大情報学研究科の吉田です。主に強化学習とロボティクス、特に汎用的な動機づけの観点での恒常性に興味があり、その中で現在はマルチエージェント強化学習への応用可能性の観点でCPCのプロジェクトに参画しています。よろしくお願いします。
+</div>
+<div class="link-group">
+<a href="https://x.com/movingsloth" target="_blank">https://x.com/movingsloth</a><a href="https://sites.google.com/view/movingsloth/home" target="_blank">https://sites.google.com/view/movingsloth/home</a>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<div class="profile-image no-image">鈴</div>
+</div>
+<div class="card-body">
+<h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">鈴木 大地</h3>
+<div class="tag-container mb-3">
+<span class="tag">生命記号論</span><span class="tag">科学哲学</span><span class="tag">進化</span><span class="tag">表象</span><span class="tag">意識</span>
+</div>
+<div class="quote mb-3">
+・動物における前言語的なCPCからヒトにおける真の言語的なCPCの進化的創発メカニズム
+・前言語的かつprivateな記号（≒心的表象）からpublicな言語的記号への進化的創発メカニズム
+・CPCはsemiotic triangleの図式に当てはめる
+</div>
+<div class="mt-3 text-italic">
+脳や行動、意識の進化について、進化生物学、神経科学、科学哲学など多方面から研究しております。最近は生命記号論の批判的検討を通して、意味の創発にも興味をもっております。今回の合宿では、言語にとどまらない広い視点から記号創発システム論や集合的予測符号化について議論できればと思います。どうぞよろしくお願いいたします。
+</div>
+<div class="link-group">
+<a href="Xアカウント：https://x.com/suz_dg" target="_blank">Xアカウント：https://x.com/suz_dg</a>
+</div>
+<div class="papers">タイトル：The anthropic principle for the evolutionary biology of consciousness: Beyond anthropocentrism and anthropomorphism
+リンク： https://link.springer.com/article/10.1007/s12304-022-09474-y
+
+タイトル：脳と意識の進化：人間中心主義へのアンチテーゼ 
+リンク： https://webview.isho.jp/journal/detail/abs/10.69291/J00762.2024180916
+
+タイトル：なぜ「脳の進化」はこんなにも誤解されるのか…いまだにはびこる「俗説」の正体
+リンク：https://gendai.media/articles/-/146100</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<div class="profile-image no-image">佐</div>
+</div>
+<div class="card-body">
+<h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">佐治伸郎</h3>
+<div class="tag-container mb-3">
+<span class="tag">言語</span><span class="tag">記号論</span><span class="tag">現象学</span><span class="tag">集団的予測符号化</span><span class="tag">心理学</span><span class="tag">言語習得</span>
+</div>
+<div class="quote mb-3">
+子どもの言語習得過程のような個体発生の過程において，「成員みなに通じる」というようなマクロな規範としての言語の発見(naming insightなどと言われたりします)はどのようにして生じるのだろうか．それとも別に生じないのだろうか．もしそういう現象があるとしたらどうシミュレートできるのだろうか．
+</div>
+<div class="mt-3 text-italic">
+言語習得および記号コミュニケーションの発達，そしてこのような発達が推論や思考にどのように影響を与えていくのかという問題に興味があります．実験心理学の方法を用いてこれらの問題に取り組んでいます．今回は様々な分野の方々と議論するのを楽しみにしております．
+</div>
+<div class="link-group">
+<a href="https://x.com/non_svch" target="_blank">https://x.com/non_svch</a>
+</div>
+<div class="papers">タイトル：「信号、記号、言語へ:コミュニケーションが紡ぐ意味の体系」
+リンク：https://amzn.asia/d/92M8g6O
+タイトル：Acquisition of the Meaning of the Word Orange Requires Understanding of the Meanings of Red, Pink, and Purple: Constructing a Lexicon as a Connected System
+リンクhttps://onlinelibrary.wiley.com/doi/full/10.1111/cogs.12813</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<div class="profile-image no-image">谷</div>
+</div>
+<div class="card-body">
+<h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">谷口彰</h3>
+<div class="tag-container mb-3">
+<span class="tag">言語創発</span><span class="tag">記号創発ロボティクス</span><span class="tag">認知発達ロボティクス</span><span class="tag">人工生命</span><span class="tag">計算論的神経科学</span><span class="tag">能動的推論</span><span class="tag">空間認知</span>
+</div>
+<div class="quote mb-3">
+・空間認知と社会的な認知や記号創発との関係
+・マルチエージェント能動的推論による質問ベースの記号創発
+・脳（部位）とLLM（潜在空間）の機能的な関係
+</div>
+<div class="mt-3 text-italic">
+私は、ロボットが環境から知識を獲得し、理解するプロセスに興味を持ち、記号創発ロボティクスの研究を進めています。特に、確率的生成モデルを用いた場所概念や語彙の獲得、また海馬体を参考にした脳参照アーキテクチャの構築をテーマに、ロボットの学習や認知の仕組みを探求しています。さらに、ロボットが獲得した知識を活用し、生活支援への応用にも取り組んでいます。今回の合宿では、異なる分野の視点や知見を共有し、新たな発見ができることを楽しみにしています。どうぞよろしくお願いします。
+</div>
+<div class="link-group">
+<a href="Facebook：https://www.facebook.com/akira.taniguchi.37b/" target="_blank">Facebook：https://www.facebook.com/akira.taniguchi.37b/</a><a href="webサイト：https://sites.google.com/site/ataniguchi0403/" target="_blank">webサイト：https://sites.google.com/site/ataniguchi0403/</a>
+</div>
+<div class="papers">Akira Taniguchi, Tadahiro Taniguchi, and Angelo Cangelosi, "Cross-Situational Learning with Bayesian Generative Models for Multimodal Category and Word Learning in Robots", Frontiers in Neurorobotics, Vol. 11, No. 66, 19 pages, 2017.  DOI: 10.3389/fnbot.2017.00066
+https://www.frontiersin.org/articles/10.3389/fnbot.2017.00066/abstract
+
+Akira Taniguchi, Ayako Fukawa, Hiroshi Yamakawa, "Hippocampal formation-inspired probabilistic generative model", Neural Networks, Vol.151, No. July, pp.317-335, 2022. DOI: 10.1016/j.neunet.2022.04.001
+https://www.sciencedirect.com/science/article/pii/S0893608022001332
+https://arxiv.org/abs/2103.07356
+
+Akira Taniguchi, Shuya Ito, Tadahiro Taniguchi, "Hierarchical Path-planning from Speech Instructions with Spatial Concept-based Topometric Semantic Mapping", Frontiers in Robotics and AI, section Field Robotics, Vol. 11, June 2024. DOI: 10.3389/frobt.2024.1291426
+https://www.frontiersin.org/articles/10.3389/frobt.2024.1291426/abstract</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<div class="profile-image no-image">日</div>
+</div>
+<div class="card-body">
+<h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">日永田智絵</h3>
+<div class="tag-container mb-3">
+<span class="tag">感情</span><span class="tag">発達</span><span class="tag">生命</span><span class="tag">植物</span><span class="tag">ロボティクス</span><span class="tag">内受容感覚</span><span class="tag">身体性</span>
+</div>
+<div class="quote mb-3">
+LLMが主観を持つためにはどうしたら良いか
+</div>
+<div class="mt-3 text-italic">
+現在、感情を中心に構成論的アプローチを実施しており、『感情発達ロボティクス』という領域を立ち上げていきたいと考えております。本会で記号創発システムについて、様々な方と議論できることを楽しみにしております。よろしくお願いいたします。
+</div>
+<div class="link-group">
+<a href="https://www.hieida.com/" target="_blank">https://www.hieida.com/</a>
+</div>
+<div class="papers">タイトル：「社会的感情とロボットについて」
+リンク：https://www.tandfonline.com/doi/full/10.1080/01691864.2021.2012512
+タイトル：「ヒト生体データを用いた感情の概念形成」
+リンク：https://arxiv.org/abs/2404.08295
+タイトル：「深層感情モデルを用いた感情分化のシミュレーション」
+リンク：https://www.jstage.jst.go.jp/article/jjsai/36/1/36_43/_article/-char/ja/</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<div class="profile-image no-image">山</div>
+</div>
+<div class="card-body">
+<h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">山木良輔</h3>
+<div class="tag-container mb-3">
+<span class="tag">LLM</span><span class="tag">AIアラインメント</span><span class="tag">言語創発</span><span class="tag">言語進化</span><span class="tag">マルチエージェント</span><span class="tag">ミームの発生・伝播</span>
+</div>
+<div class="quote mb-3">
+・異なる身体を有する複数の個体を前提としたCPCの理論について。
+・CPCにおける言語の構文的側面が果たす役割について。
+・計算社会科学とCPCの接点に関して。CPCの理論では、現実社会における様々な現象の内、どこまでのモデル化することができるのか。
+</div>
+<div class="mt-3 text-italic">
+nan
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<div class="profile-image no-image">藤</div>
+</div>
+<div class="card-body">
+<h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">藤澤逸平</h3>
+<div class="tag-container mb-3">
+<span class="tag">AGI</span><span class="tag">リーズニング</span><span class="tag">記号の創発</span><span class="tag">言語の創発</span><span class="tag">表象</span>
+</div>
+<div class="quote mb-3">
+記号創発システム論とリーズニングの関連
+</div>
+<div class="mt-3 text-italic">
+この数年、AIと人間の知的活動のギャップはどこにあるのか、AGIを作るにはどうすればよいか、というようなことに関心を持ってきていました。特にその中でもリーズニング、論理的推論あたりはある程度の進展が見込まれるものと思っていました。昨年は、推論スケーリングをキーワードに研究が進み、またo1シリーズが出たことを皮切りに、各社からリーズニングに強いモデルが出始めました。これは一つの方向ではあるものの、依然としてギャップはあるでしょうし、どこかで行き詰まることもあるかもしれません。特に一つの方向性としては「新たに定義すること」あたりが次の焦点になってくるのではないかと感じています。これはおそらく記号や言語の創発と関連がありそうで、このあたりについて議論できればと思います。
+</div>
+<div class="link-group">
+<a href="https://x.com/ifuiaa" target="_blank">https://x.com/ifuiaa</a>
+</div>
+<div class="papers">https://arxiv.org/abs/2410.03117 https://arxiv.org/abs/2211.07727</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<div class="profile-image no-image">安</div>
+</div>
+<div class="card-body">
+<h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">安田裕子</h3>
+<div class="tag-container mb-3">
+<span class="tag">語り（ナラティブ）、意味、生涯発達、生成継承性、TEA（複線径路等至性アプローチ）、質的研究、記号、ライフとキャリア</span>
+</div>
+<div class="quote mb-3">
+人が変化するとき、新しい何か（気づき、将来の夢、こうありたい自分、展望など）が芽生えるとき、社会・世界がそれまでとは異なって見えるときなどに、どんなことが生じているのか、ということを、「そのときどのような記号が発生しているのか」といった観点から考えたいと思っています。どうぞよろしくお願いいたします。
+</div>
+<div class="mt-3 text-italic">
+はじめまして。質的なアプローチ、とくにインタビューの手法を用いて、人のライフに迫る研究をしています。専門は、臨床心理学、生涯発達心理学です。人生には、発達的に陥りやすい危機と偶発的に遭遇しうる危機がありますが、人が、こういった危機に向き合いつつ、恢復していく様相に関心をもって探究をしています。また、人のそうした時間的な変容プロセスの様相を、転換点やありうる選択径路に留意しつつとらえる質的研究法TEA（複線径路等至性アプローチ）を、共同で開発・精緻化してきました。このTEAは記号論的文化心理学に依拠しており、記号創発システム論との親和性が高いと考えられます。時空間を共にした濃密な合宿でのそれぞれの専門分野をベースとしたディスカッションからなにか化学反応が生みだされるかも！ととても楽しみにしています。どうぞよろしくお願いいたします。
+</div>
+<div class="link-group">
+<a href="webサイト：" target="_blank">webサイト：</a><a href="TEAと質的探究学会　https://jatq.jp/index.html" target="_blank">TEAと質的探究学会　https://jatq.jp/index.html</a><a href="TEA　https://sites.google.com/site/kokorotem/whatistem" target="_blank">TEA　https://sites.google.com/site/kokorotem/whatistem</a>
+</div>
+<div class="papers">タイトル：「不妊という経験を通じた自己の問い直し過程―治療では子どもが授からなかった当事者の選択岐路から」
+リンク：https://www.jstage.jst.go.jp/article/jaqp/4/1/4_201/_pdf/-char/ja
+タイトル：「未婚の若年女性の中絶経験――現実的制約と関係性の中で変化する，多様な径路に着目して」
+リンク：https://www.jstage.jst.go.jp/article/jaqp/7/1/7_181/_pdf/-char/ja
+タイトル：「体外受精適応となった女性の不妊経験への意味づけ過程―複線径路等至性モデリングを用いて」
+リンク：https://www.jstage.jst.go.jp/article/jshms/28/1/28_280103/_pdf/-char/ja</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<div class="profile-image no-image">山</div>
+</div>
+<div class="card-body">
+<h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">山中　司</h3>
+<div class="tag-container mb-3">
+<span class="tag">プラグマティズム</span><span class="tag">ラディカル構成主義</span><span class="tag">ネオサイバネティクス</span><span class="tag">オートポイエーシス</span><span class="tag">言語教育</span><span class="tag">マルチモーダル</span>
+</div>
+<div class="quote mb-3">
+AIと人間社会の共存のあり方について示唆を頂ければ幸いです。
+</div>
+<div class="mt-3 text-italic">
+私は立命館大学で、語学(英語)教育に携わっている山中と申します。なんとか機能不全に陥った大学英語教育を改革しようと、様々な理論的見地を総合しながら、有効な外国語学習理論を実践したく、その一つの具現である、プロジェクト発信型英語プログラム(Project-based English Program: PEP)を実践してます。プラグマティズムやラディカル構成主義、オートポイエーシス論などを援用し、記号創発システム論を地で行くことを英語教育で実現したい、そのように考えている者です。是非様々なインサイトを頂ければと思っています。どうぞ宜しくお願いします。
+</div>
+<div class="papers">タイトル：「The Critical Influence of Machine Translation on Foreign Language Education: A Prospective Discourse on the Rise of a Novel Instructional Landscape」
+リンク：https://cgscholar.com/bookstore/works/the-critical-influence-of-machine-translation-on-foreign-language-education?category_id=cgrn
+
+タイトル：「プラグマティックな英語教育論へ：もう「文法」はいらない」
+リンク：https://www.jstage.jst.go.jp/article/keles/8/0/8_27/_pdf/-char/ja
+
+タイトル：「An Exploration of Davidson’s Passing Theory with Suggestions from Peirce’s Pragmatic Abductive Inference」
+リンク：https://cgscholar.com/bookstore/works/an-exploration-of-davidsons-passing-theory-with-suggestions-from-peirces-pragmatic-abductive-inference</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<div class="profile-image no-image">杉</div>
+</div>
+<div class="card-body">
+<h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">杉山滉平</h3>
+<div class="tag-container mb-3">
+<span class="tag">集団的予測符号化</span>
+</div>
+<div class="quote mb-3">
+言語習得に至るプロセス
+</div>
+<div class="mt-3 text-italic">
+nan
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<div class="profile-image no-image">久</div>
+</div>
+<div class="card-body">
+<h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">久保田はな</h3>
+<div class="tag-container mb-3">
+<span class="tag">現象学</span><span class="tag">表象</span><span class="tag">時間論</span><span class="tag">情動</span><span class="tag">クオリア</span><span class="tag">美学</span><span class="tag">共通言語</span><span class="tag">論理構造</span>
+</div>
+<div class="quote mb-3">
+①発達の過程で、快不快の反応と、公的・言説的な好き嫌いと、善悪の判断が重なったり異なったりすることを学ぶメカニズムについて。②モリヌークス問題（生まれつきの盲人が球と立方体を判別できていて、後から視覚を獲得したら触らずに判定できるか）と、LLMがVR空間でそれができるようになるだろうという話と、その議論意味ないよね、という話。③実践的な話として、教育の場のデザインとして、理想的な授業の形を伺いたい。
+</div>
+<div class="mt-3 text-italic">
+はじめまして、立命館大学大学院で哲学専修に在籍している久保田はなと申します。私は、身体と空間の関係性や、感性・情動がどのように芸術の美的体験を生み出すのかを研究テーマとしています。所属ゼミでは、メルロ＝ポンティの思想のなかで、現象学的な視点を通して、私たちの日常的な「感じる」という体験が、個々人の芸術的な体験や、公的な美学の学問的展開にどのように反映されるのかを探求しています。
+イメージとしては、カントの判断力批判の「崇高」に位置するものがちょっとずつ形を変えて認識の枠組みに入り込んでくることがどうやって起こっているのかが気になっています。
+</div>
+<div class="link-group">
+<a href="Xアカウント：https://x.com/veloce_ponty" target="_blank">Xアカウント：https://x.com/veloce_ponty</a><a href="立命館大学院生研究業績サイト：https://gyoseki.ritsumei.ac.jp/ritgshp/k03/resid/S009933;jsessionid=1C72092388A8C18A79CC528C7732EAB8" target="_blank">立命館大学院生研究業績サイト：https://gyoseki.ritsumei.ac.jp/ritgshp/k03/resid/S009933;jsessionid=1C72092388A8C18A79CC528C7732EAB8</a>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<div class="profile-image no-image">山</div>
+</div>
+<div class="card-body">
+<h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">山下祐一</h3>
+<div class="tag-container mb-3">
+<span class="tag">計算論的精神医学</span><span class="tag">予測情報処理</span><span class="tag">ニューロロボティクス</span><span class="tag">リカレントニューラルネットワーク</span><span class="tag">統合失調症</span><span class="tag">精神病理学</span>
+</div>
+<div class="quote mb-3">
+能動的推論と自己・他者概念、精神病理との関係など
+</div>
+<div class="mt-3 text-italic">
+​計算論的精神医学の立場から、ニューラルネットワークモデルやロボットを用いた構成論的アプローチを通じて、精神疾患の病態メカニズムの解明を目指しています。
+集団レベルの予測情報処理・能動的推論という観点が、精神障害理解に貢献する可能性に興味をもっています。
+</div>
+<div class="link-group">
+<a href="https://researchmap.jp/yamay" target="_blank">https://researchmap.jp/yamay</a>
+</div>
+<div class="papers">Idei, H., Suzuki, K., & Yamashita, Y. (2024). Awareness of being: A computational neurophenomenological model of mindfulness, mind-wandering, and meta-attentional control. https://doi.org/10.31234/osf.io/stxu6
+Idei, H., & Yamashita, Y. (2024). Elucidating multifinal and equifinal pathways to developmental disorders by constructing real-world neurorobotic models. Neural Networks, 169, 57–74. https://doi.org/10.1016/j.neunet.2023.10.005</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<div class="profile-image no-image">原</div>
+</div>
+<div class="card-body">
+<h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">原光樹</h3>
+<div class="tag-container mb-3">
+<span class="tag">社会学</span><span class="tag">クィア理論</span><span class="tag">精神分析</span><span class="tag">エスノメソドロジー</span><span class="tag">情報社会論</span><span class="tag">ジェンダー</span><span class="tag">ルーマン</span><span class="tag">等価機能主義</span>
+</div>
+<div class="quote mb-3">
+①CPCはAI社会論における「脳がつながってる問題」（人類補完計画的）をどう相対化するか
+
+私が「集合的予測符号化」についての論考を読み一番感銘をうけたポイントとして、谷口さんは「個体同士の脳を繋がない話をしているのだ」と思ったことがあります。
+
+というのも、ＡＩと知能といったテーマのときには、ＡＩ推進論者の人は「全部の脳を繋ぐ」方向の議論をすることが多いイメージがあるからです。谷口さんはその逆なのが面白い。メトロポリス・ヘイスティングス名付けゲームも、「脳を繋がない」ための仕組みといえると思います。（言語的な議論では「パラドックス」とされていることを、数理的な構造を芯にいれることでむしろ主流理解（？）にしようとしている。）
+
+私は、人間の知能（クリエイティブ）の源は、良くも悪くも脳がみんなバラバラでつながっていないことにあると思っているタイプなので、谷口さんの議論はとても腑に落ちました。
+個体は100年経ったら保存もされず死ぬ。そこにまたリセットされた不勉強な新しい世代がくる。でも、だからこそ先行世代はやらなかった変な（バカな）チャレンジを新しい個体がはじめる。そして、先行世代から相続されてる文化の上で、新しいなにかが生まれる。ということの繰り返しのイメージです。でも、この非効率な繰り返しが「人間らしさ」の条件になっている。
+
+話をひろげると、こうした「脳をつなげない」社会観こそ、人類社会の多様性や民主主義の根幹にもなりえると私はおもっています。（cf.東浩紀『訂正可能性の哲学』（2023年）がカーツワイル／落合陽一／成田悠輔／鈴木健らの議論を例に「人工知能民主主義」を批判している議論は参考になる。）
+
+これは潜在的には、精神分析（ラカン）におけるシニフィアンの位置付けなどとも絡むポテンシャルがあるテーマだと思っています。
+他人文社会系の基礎理論みたいなものとの接合のポテンシャルも高いと思っているため、私自身考えていきたいテーマです。
+
+②CPCおよび記号創発システム論は「どの学問を反復」するのか
+
+古今東西の学問や知的潮流、学派のようなものをマクロにみたとき、”CPCおよび記号創発システム論はなにの反復”だと思えばいいでしょうか。
+
+③（番外編）『ワードマップ　記号創発システム論』をもっと売るためは？
+（版元の人間として半分冗談、半分本気だと思っていただきたいのですが）『ワードマップ　記号創発システム論』をもっと売るためにはどうすればいいでしょうか…？
+たとえばシリーズ化して書籍化していく場合、どのような展開がいいか。
+
+実は②の問題意識ともつながる問題で、どのような枠組みや知的パッケージとして打ち出していくと、最も社会的インパクトをもてるか、ということについても考えていきたいです。
+</div>
+<div class="mt-3 text-italic">
+出版社で編集の仕事をしております。『ワードマップ 記号創発システム論』の編集を担当させていただきました。
+
+一番のバックグラウンドは社会学ですが、社会学のなかでも理論系のものに関心が高く、哲学や現代思想系の議論にも親しんでいます。最新は心理学に力をいれて勉強中です。
+学部がSFCだったこと、卒論で『「情報社会論」論についての言説研究』テーマにしたこともあり、学際的な人文知×情報系の議論にはずっと関心を持ちづづけてきました。
+
+「記号創発システム論」は文理問わず多様なプレイヤーが、共通の問いを探究していける「プラットフォーム」のような理論だと思っています。
+これを機会にそんなプラットフォームに集う方々と議論し、仲間になり、これからの仕事の種をたくさんつくりたい！そして、本（『記号創発システム論』）をもっと売りたい！
+下心満載でのぞんでいきたいと思っています。よろしくお願いいたします。
+</div>
+<div class="link-group">
+<a href="Xアカウント：https://x.com/harako95" target="_blank">Xアカウント：https://x.com/harako95</a>
+</div>
+<div class="papers">＞運営の方へ
+以下は論文ではないのでNGなら未掲載でOKでございます
+
+関連分野で編集や企画にたずさわったものを以下に記載します。
+
+記号創発システム論
+https://www.shin-yo-sha.co.jp/book/b650985.html
+
+2ちゃん化する世界
+https://www.shin-yo-sha.co.jp/book/b620514.html
+
+三宅陽一郎 × ドミニク・チェン × 東浩紀
+人工知能のための哲学塾 at ゲンロンカフェ
+https://genron-cafe.jp/event/20190208/</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<div class="profile-image no-image">尾</div>
+</div>
+<div class="card-body">
+<h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">尾本 晴海</h3>
+<div class="tag-container mb-3">
+<span class="tag">内部表象</span><span class="tag">言語の出現</span><span class="tag">言語の進化</span>
+</div>
+<div class="quote mb-3">
+言語はどのようにして生まれたのか なぜ私たちは言語を用いたコミュニケーションが可能なのか
+</div>
+<div class="mt-3 text-italic">
+nan
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<div class="profile-image no-image">平</div>
+</div>
+<div class="card-body">
+<h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">平井靖史</h3>
+<div class="tag-container mb-3">
+<span class="tag">ベルクソン哲学</span><span class="tag">時間</span><span class="tag">記憶</span><span class="tag">意識</span><span class="tag">自由</span><span class="tag">ランドスケープ</span>
+</div>
+<div class="quote mb-3">
+ランドスケープ概念と集合的予測符号化（CPC）
+個体や集団が環境との継続的な相互作用を通じて構築する「ランドスケープ（行動可能性の状態空間）」が、CPCの枠組みにおいてどのような理論的位置づけを持つのかを検討したい。特に、個体レベルの学習や進化的プロセス（超高速〜高速：System 0–1）から、社会的・文化的な相互作用を介した集合的ランドスケープの構築（超低速：System 3）までを、統一的に扱う枠組みを探究したい。ランドスケープの起伏が、個体差を含む多様な認知の軌跡を生み、それが記号の創発・共有・進化にどう影響するかを議論したい。
+
+記憶の哲学への文脈化
+現代記憶の哲学でも、さまざまな議論が生まれつつある。そのなかで、システム３は時間的にスーパースローな、空間的に集合的な巨大ワーキングメモリと解釈できる。そもそも一人称のエピソード記憶も原初的に二人称記憶（共同想起、想起補助）に依存していることを考えると、個人→集団の手前で範型的な二人称的状況を考えられる、など。
+
+マルチ時間スケールから時間認識自体が生まれる可能性
+シングルスケールでは、所与の時間しかないため、そこに埋め込まれたエージェントはそれを時間として認識できない可能性がある。スケールギャップが時制の区別を説明するというMTSモデルはCPC /PCで自明視されている時間概念の成立・発生を主題化できるかも。
+</div>
+<div class="mt-3 text-italic">
+こんにちは。慶應義塾大学でフランス哲学を研究し、特にアンリ・ベルクソンの時間哲学を専門としています。また、Project Bergson in Japan という国際・学際プロジェクトを主宰し、ロボティクス、AI、神経科学など多様な分野と連携しながら、時間と知覚、記憶の問題を探究しています。谷口忠大さんとは対談や共著を通じて交流があり、構成的アプローチと時間哲学の接点について議論を深めてきました。集合的予測符号化（CPC）と記号創発の視点から、時間の多重性や二人称記憶、社会的知性の形成といったテーマについて意見交換できることを楽しみにしています。どうぞよろしくお願いいたします。
+</div>
+<div class="link-group">
+<a href="Xアカウント：https://x.com/hiraiyasushi1" target="_blank">Xアカウント：https://x.com/hiraiyasushi1</a><a href="webサイト：https://hiraiya.wordpress.com/" target="_blank">webサイト：https://hiraiya.wordpress.com/</a>
+</div>
+<div class="papers">タイトル：『世界は時間でできている　ベルクソン時間哲学入門』青土社、2022。
+リンク：https://hiraiya.wordpress.com/2022/07/16/sekaji/
+
+タイトル："Does Time Have A Speed? Time Qualia and Bergson's Durée" Sintese: O PENSAMENTO E O MOVENTE - 90 ANOS. v. 51 n. 160 2024, pp. 245-270.
+リンク：https://www.faje.edu.br/periodicos/index.php/Sintese/article/download/5768/5292/18657
+
+タイトル：「心と記憶力——知的創造のベルクソンモデル——」『人工知能　特集 意識とメタ過程』33巻4号、2018年7月、508-514. 
+リンク：https://www.jstage.jst.go.jp/article/jjsai/33/4/33_508/_article/-char/ja/</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<div class="profile-image no-image">加</div>
+</div>
+<div class="card-body">
+<h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">加藤 隆文</h3>
+<div class="tag-container mb-3">
+<span class="tag">プラグマティズム</span><span class="tag">記号論</span><span class="tag">美学</span><span class="tag">芸術学</span><span class="tag">マルチ・スピーシーズ人類学</span>
+</div>
+<div class="quote mb-3">
+とりわけ集合的予測符号化の議論をめぐって、哲学研究者の視点で理解を深め、ひいては美学・芸術学との接続を検討したいです。
+</div>
+<div class="mt-3 text-italic">
+プラグマティズムの哲学の研究者で、美学・芸術学のバックグラウンドも持っています。『記号創発システム論』では「プラグマティズム」の項目を執筆しました。その際にはあまり踏み込めなかった集合的予測符号化の議論などについて、哲学研究者の視点で理解を深め、ひいては美学・芸術学との接続を検討したいと考えています。どうぞよろしくお願いします。
+</div>
+<div class="papers">シェリル・ミサック著、加藤隆文訳『プラグマティズムの歩き方』勁草書房、2019年。
+「分析プラグマティズムからの提案：分析美学の問い直しのために」
+https://doi.org/10.20631/bigaku.70.1_49
+"A Peircean revision of the theory of extended mind"
+http://www.commens.org/sites/default/files/biblio_attachments/a_peircean_revision_of_the_theory_of_extended_mind.pdf</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<div class="profile-image no-image">福</div>
+</div>
+<div class="card-body">
+<h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">福島 俊一</h3>
+<div class="tag-container mb-3">
+<span class="tag">記号・言語の獲得・創発、世界の認識、システム1～3のダイナミズム、人・AI共生社会のメカニズムやトラスト形成、科学的発見と集合的予測符号化</span>
+</div>
+<div class="quote mb-3">
+集合的予測符号化仮説に基づく世界の認識や社会メカニズムの可能性など（特に強い主張を持っているわけではなく広く関心があります）
+</div>
+<div class="mt-3 text-italic">
+2016年から科学技術振興機構（JST）研究開発戦略センター（CRDS）にてAI分野の俯瞰的調査と戦略提言を担当しています。その前はNECの研究開発部門にて、自然言語処理やWeb検索・マイニング等の研究開発・事業化に携わっていました。大学では素粒子原子核物理実験、現在はアートや料理を趣味としています。物理学、アート、AI、哲学など、いずれも人間を介した世界の認識論として共通した関心を持っています。記号創発は2019年頃から、集合的予測符号化への発展の兆しは2022年初頭から注目してきました。今回の参加メンバーではおそらく最高齢かもしれませんが、世代や分野を横断した議論を楽しみにしています。
+</div>
+<div class="link-group">
+<a href="Facebook　https://www.facebook.com/toshikazu.fukushima" target="_blank">Facebook　https://www.facebook.com/toshikazu.fukushima</a><a href="Instagram　https://www.instagram.com/fudao3/" target="_blank">Instagram　https://www.instagram.com/fudao3/</a>
+</div>
+<div class="papers">(1) JST CRDS報告書「人工知能研究の新潮流2　～基盤モデル・生成AIのインパクト～」
+https://www.jst.go.jp/crds/report/CRDS-FY2023-RR-02.html
+(2) JST CRDS戦略プロポーザル「次世代AIモデルの研究開発」
+https://www.jst.go.jp/crds/report/CRDS-FY2023-SP-03.html
+(3) JST CRDS戦略プロポーザル「デジタル社会における新たなトラスト形成」
+https://www.jst.go.jp/crds/report/CRDS-FY2022-SP-03.html</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<div class="profile-image no-image">上</div>
+</div>
+<div class="card-body">
+<h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">上野裕太郎</h3>
+<div class="tag-container mb-3">
+<span class="tag">理論社会学</span><span class="tag">ニクラス・ルーマン</span><span class="tag">社会システム理論</span><span class="tag">AI倫理</span>
+</div>
+<div class="quote mb-3">
+・AI時代における社会システム理論のアップデート
+・AI時代に社会学はいかにして社会を記述できるのか
+</div>
+<div class="mt-3 text-italic">
+皆さま、はじめまして。私は社会学における社会システム理論の立場から気候変動における社会運動とメディアでのリアリティの多重化をテーマに研究を行っています。その他にも、社会システム理論自体が諸テクノロジーの発展、生活世界への浸透によって、いかにして理論がアップデートさせる必要があるのか、どうアップデートが可能かということに関心を持っています。
+今回の合宿では様々な分野・お立場の方がどのように記号創発システム論を記述に使っているのか、社会学との接点はどこにあるのか学びながら議論をできることを楽しみにしております。よろしくお願いいたします。
+</div>
+<div class="link-group">
+<a href="webサイト：https://sites.google.com/view/yutaro0518/" target="_blank">webサイト：https://sites.google.com/view/yutaro0518/</a><a href="Facebook：https://www.facebook.com/yutaro0518" target="_blank">Facebook：https://www.facebook.com/yutaro0518</a>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<div class="profile-image no-image">宮</div>
+</div>
+<div class="card-body">
+<h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">宮下太陽</h3>
+<div class="tag-container mb-3">
+<span class="tag">記号論、集合的予測符号化、自由エネルギー原理、プラグマティズム、現象学</span>
+</div>
+<div class="quote mb-3">
+これまで前提としてきた現代社会における社会文化的システムが大きな分岐に直面している中、改めて包括体系的なシステム論（記号創発システム論）とその原理論と向き合うことで、変革しつつあるシステムとそこに生きる人間の生に対してどのような示唆を得ることができるのかについて議論したい。
+</div>
+<div class="mt-3 text-italic">
+皆さん。はじめまして。宮下です。専門は記号論的文化心理学で、普段は民間のシンクタンクにおいて、人と組織に関する研究と、その社会実装として様々な組織に対する個別具体的なコンサルティングを実施しています。研究領域としては、特に社会人のキャリアを切り口として、人生100年時代おける人と組織のかかわり方を模索しています。今回の合宿では、記号創発システム論という大きな枠組みのもと、様々な専門性を持つ研究者の方々の多様な視座に触れることができるのを楽しみにしています。よろしくお願いいたします。
+</div>
+<div class="papers">①タイトル：「TEA（複線径路等至性アプローチ）における記号概念の考察――パース，ヴィゴーツキー，ヴァルシナーを手がかかりに」
+リンク：https://ritsumei.repo.nii.ac.jp/records/16865
+②タイトル：「TEM（複線径路等至性モデリング）の新たな理論的展開 : 記号圏とイマジネーション理論を踏まえて」
+リンク：https://ritsumei.repo.nii.ac.jp/records/16867</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<div class="profile-image no-image">長</div>
+</div>
+<div class="card-body">
+<h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">長野 匡隼</h3>
+<div class="tag-container mb-3">
+<span class="tag">記号論</span><span class="tag">ロボティクス</span><span class="tag">マルチエージェント</span><span class="tag">集団的予測符号化</span><span class="tag">言語進化</span><span class="tag">世界モデル</span><span class="tag">環世界</span>
+</div>
+<div class="quote mb-3">
+マルチエージェントでの記号創発と社会やコミュニティ形成
+記号創発と行動変容などの実世界への働きかけ
+記号創発とLLMの立ち位置や関わり方
+</div>
+<div class="mt-3 text-italic">
+皆さん、はじめまして。知能ロボティクスや機械学習・統計モデルを通じて、人間の認知や知識形成、行動学習のプロセスを探究しております。特に、時系列の感覚情報から言語や記号がどのように形成されるのかを、構成論的アプローチに基づいて研究しています。これまで工学的な手法を中心に研究を進めてまいりましたが、本研究会では異なる分野の視点を取り入れた議論ができることを楽しみにしております。また、こうした交流を通じてコミュニティが広がり、この分野の研究がさらに発展していくことを期待しています。どうぞ、よろしくお願いいたします。
+</div>
+<div class="link-group">
+<a href="https://x.com/NaganoM22?t=v6fl2mWHv9lvUaqav7AqoQ&s=31" target="_blank">https://x.com/NaganoM22?t=v6fl2mWHv9lvUaqav7AqoQ&s=31</a>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<div class="profile-image no-image">水</div>
+</div>
+<div class="card-body">
+<h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">水鳥翔伍</h3>
+<div class="tag-container mb-3">
+<span class="tag">制度</span><span class="tag">協力問題</span><span class="tag">ゲーム理論</span><span class="tag">記号論</span><span class="tag">プラグマティズム</span>
+</div>
+<div class="quote mb-3">
+制度変化をどう扱うか。とくに、制度のもつ行動的側面と認知的側面とがどのように連動するのか。個人的には、コミュニケーション（記号の提案と受容/棄却）による記号システムの変化から行動パターンの変化が生じるモデルを構築したいと考えている。
+</div>
+<div class="mt-3 text-italic">
+博士課程の水鳥と申します。バックグラウンドは社会心理学です。主に制度の変化に興味をもっています。ここでいう制度の変化とは、人々の行動パターンの変化や、何が適切な行動かという信念の変化で、例えば喫煙や飲酒運転に関する態度や行動の変化です。制度に対する既存のゲーム理論的アプローチは、制度のもつ安定性を説明することに長けていますが、変化のモデル化にはあまり成功していない感があり、記号システムの変化という観点からこれを補完することができないかと考えています。この合宿では、議論から大いに勉強させていただくとともに、協力研究の観点から貢献できればと思いますので、どうぞよろしくお願いいたします。
+</div>
+<div class="link-group">
+<a href="Xアカウント: https://x.com/MizutoriShogo" target="_blank">Xアカウント: https://x.com/MizutoriShogo</a>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<div class="profile-image no-image">野</div>
+</div>
+<div class="card-body">
+<h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">野村 健太郎</h3>
+<div class="tag-container mb-3">
+<span class="tag">能動的推論</span><span class="tag">世界モデル</span><span class="tag">協調的行動</span><span class="tag">認知発達ロボティクス</span><span class="tag">感情（情動）</span><span class="tag">自由エネルギー原理</span><span class="tag">内発的動機付け</span><span class="tag">構成主義</span>
+</div>
+<div class="quote mb-3">
+集合的予測符号化に基づいた集団による能動的推論の枠組みからみた人の協調的ふるまいの原理について．また，人工エージェント集団による協調行動の実現のための数理．集合的な内発的動機付けと行動．集合的知識推論の拡張として，発話によって他者の振る舞いを促すことによる，環境への間接的な行動としての記号推論．（Narrative as active inferenceとCPCとの関係性）
+</div>
+<div class="mt-3 text-italic">
+私は，自由エネルギー原理や能動的推論の枠組みを用いて，集合的予測符号化に基づくマルチエージェント世界モデルについて研究しています．特に，協調的なふるまいを可能とする人間の社会システムの構成論に関心を持ち，集合的な能動的推論の観点から，他者と協力してタスクを達成するエージェントやロボットの実現を目指しています．また，人や人工システムにおける情動の獲得や，内発的動機付けに基づく行動が知識や能力の発達にどう寄与するかにも興味があります．今回の合宿では，活発な議論を通じて新たな知見や研究につながるヒントを得られることを楽しみにしています．どうぞよろしくお願いいたします．
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<div class="profile-image no-image">田</div>
+</div>
+<div class="card-body">
+<h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">田島潤</h3>
+<div class="tag-container mb-3">
+<span class="tag">社会規範</span><span class="tag">言語哲学</span><span class="tag">記号論</span><span class="tag">表象</span><span class="tag">心の哲学</span><span class="tag">ミーム</span><span class="tag">ミクロ・マクロループ</span><span class="tag">ウィトゲンシュタイン</span>
+</div>
+<div class="quote mb-3">
+人間一人一人のミクロな認知過程（記号の解釈／規範への準拠）と、集団でのマクロなダイナミクスの繋がり
+</div>
+<div class="mt-3 text-italic">
+ウィトゲンシュタインへの興味をきっかけに、言語や表象、社会規範や陰謀論などの現象にも関心を持っています。そういったものを統合して理解・形式化しようとする記号創発システム論の取り組みに感銘を受けました。Campで展開される学際的・学融的な議論を楽しみにしています。どうぞよろしくお願いいたします。
+</div>
+<div class="link-group">
+<a href="https://x.com/nezumijoudo" target="_blank">https://x.com/nezumijoudo</a>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<div class="profile-image no-image">西</div>
+</div>
+<div class="card-body">
+<h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">西田洋平</h3>
+<div class="tag-container mb-3">
+<span class="tag">集団的予測符号化</span><span class="tag">オートポイエーシス</span><span class="tag">ネオ・サイバネティクス</span><span class="tag">記号論</span><span class="tag">基礎情報学</span><span class="tag">ラディカル構成主義</span><span class="tag">生命</span><span class="tag">言語</span>
+</div>
+<div class="quote mb-3">
+集団的予測符号化と生命システムにおける意味の関係
+主体として言語（記号システム）という見方と主体としての人間という見方との関係性
+CPC-MSとネオ・サイバネティクスとの関係
+</div>
+<div class="mt-3 text-italic">
+オートポイエーシス論、セカンド・オーダー・サイバネティクス、基礎情報学といったネオ・サイバネティクスの立場から、情報と生命の関係性についての基礎理論的研究を行っています。今回の合宿では、集団的予測符号化仮説が示唆する言語観と、生命システムの自律性やそれをベースとする情報や意味との関係性について考えてみたいと思います。どうぞよろしくお願いします。
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<div class="profile-image no-image">椋</div>
+</div>
+<div class="card-body">
+<h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">椋本 輔</h3>
+<div class="tag-container mb-3">
+<span class="tag">記号論</span><span class="tag">プラグマティズム</span><span class="tag">ネオ・サイバネティクス</span><span class="tag">基礎情報学</span><span class="tag">オートポイエーシス</span><span class="tag">ラディカル構成主義</span><span class="tag">CPCと錯覚</span><span class="tag">情報デザイン</span><span class="tag">メディアとアーカイブ</span>
+</div>
+<div class="quote mb-3">
+＊CPC-MSとネオ・サイバネティクス（セカンドオーダー・サイバネティクス）との「メタ学問」としての関係
+＊CPCと個体レベルの錯覚の関係【※『AI時代の「自律性」』収録の拙論文でネオ・サイバネティクス的な観点からの考察を行っている、予測符号化仮説を応用したDNNによる「蛇の回転錯視」の知覚再現研究（立命館大学ほか, 2018）等を具体例に】
+</div>
+<div class="mt-3 text-italic">
+デジタル情報技術に関わるデザイン業とともに、情報・記号についての基礎理論や、メディア技術の思想史、デジタルアーカイブ実践についての研究教育活動を行なっています。
+ネオ・サイバネティクス研究会 https://digital-narcis.org/ のコアメンバーとして運営に関わり、ネオ・サイバネティクス（セカンドオーダー・サイバネティクス）の一環として構成主義的な情報概念を理論化した「基礎情報学」に基づく研究を行うとともに、記号創発システム論との相互協力によって出版された複数の書籍の執筆にも参加しています。
+同時に、日本記号学会 https://www.jassweb.jp/ の運営に関わるとともに、同「情報技術とプラグマティズム研究会」の共同幹事として、記号論／記号学と記号創発システム論やネオ・サイバネティクスとの学際的・学融的な議論の推進を図っています。
+今回の研究合宿での議論を通して、記号創発システム論と集合的予測符号化仮説をめぐる我々それぞれの観点＝学問的な観察視点と、互いの位相的な関係について、相互理解を深められればと思っています。
+</div>
+<div class="link-group">
+<a href="Academic Profile：https://digital-narcis.org/Tasuku-MUKUMOTO/" target="_blank">Academic Profile：https://digital-narcis.org/Tasuku-MUKUMOTO/</a>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<div class="profile-image no-image">高</div>
+</div>
+<div class="card-body">
+<h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">高木志郎</h3>
+<div class="tag-container mb-3">
+<span class="tag">研究ができるAI</span><span class="tag">メタサイエンス</span>
+</div>
+<div class="quote mb-3">
+科学の自動化について
+</div>
+<div class="mt-3 text-italic">
+初めまして。研究ができる AI の実現と、そのような AI を前提とした新しい科学システムの構築に関心があります。最近これらを推し進めていくために会社を作りました（まだソロですが）。よろしくお願いします。
+</div>
+<div class="link-group">
+<a href="https://x.com/takagi_shiro" target="_blank">https://x.com/takagi_shiro</a>
+</div>
+<div class="papers">タイトル：「Speculative Exploration on the Concept of Artificial Agents Conducting Autonomous Research」
+リンク：https://arxiv.org/abs/2312.03497
+
+タイトル：「On the Effect of Pre-training for Transformer in Different Modality on Offline Reinforcement Learning」
+リンク：https://openreview.net/forum?id=9GXoMs__ckJ</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<div class="profile-image no-image">進</div>
+</div>
+<div class="card-body">
+<h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">進藤稜真</h3>
+<div class="tag-container mb-3">
+<span class="tag">大規模言語モデル</span><span class="tag">言語獲得</span><span class="tag">エナクティヴィズム予測符号化</span><span class="tag">能動的推論</span><span class="tag">心の哲学</span><span class="tag">表象</span><span class="tag">身体性</span>
+</div>
+<div class="quote mb-3">
+CPCの階層性(小集団,大集団,社会)とその解釈
+</div>
+<div class="mt-3 text-italic">
+発達・学習・推論をテーマに、人工知能(生命)や認知科学の分野で研究を行っています。特に、「生物がいかにして自己を維持(自律)し、どのように知覚し適応的に行動するのか」という説明に立脚しつつ、記号や言語の果たす役割・立ち現れ方・獲得のされ方について、理論的な説明やモデルを与えることを目指しています。今回の合宿では、様々なバックグラウンドを持つ皆様と議論できることを楽しみにしております。どうぞよろしくお願いします。
+</div>
+<div class="link-group">
+<a href="Xアカウント : https://x.com/shinto_ai" target="_blank">Xアカウント : https://x.com/shinto_ai</a><a href="Webサイト : https://sites.google.com/view/ryoma-shinto" target="_blank">Webサイト : https://sites.google.com/view/ryoma-shinto</a>
+</div>
+<div class="papers">タイトル1 : 算術タスクを用いた文脈内学習による外挿能力の分析
+リンク1 : https://www.anlp.jp/proceedings/annual_meeting/2025/pdf_dir/P2-21.pdf
+
+タイトル2 : 予測符号化理論に基づく次フレーム予測モデルに生じる錯視の要因分析
+リンク2 : https://doi.org/10.11517/pjsai.JSAI2024.0_4Xin241
+
+タイトル3 : Analyzing the Sensibility of Visual Language Models Using an Evolving Image Generation System
+リンク3 : https://doi.org/10.1162/isal_a_00719</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<div class="profile-image no-image">荒</div>
+</div>
+<div class="card-body">
+<h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">荒戸 寛樹</h3>
+<div class="tag-container mb-3">
+<span class="tag">集団的予測符号化</span><span class="tag">ゲーム理論</span><span class="tag">メトロポリス・ヘイスティングス名付けゲーム</span>
+</div>
+<div class="quote mb-3">
+議論というわけではないですが、経済学やゲーム理論への応用を考えているので、先生方のお話の中でそのヒントが得られたらと思っています。
+</div>
+<div class="mt-3 text-italic">
+普段は経済学とゲーム理論の枠組みを使って、政府の情報公開や報道がマクロ経済にどのような影響を与えるかを研究しています。谷口先生の複数エージェントにおけるControl as Probabilistic Inferenceとメトロポリス・ヘイスティングス名付けゲームの考え方に興味を持ち、ゲーム理論との関連を考えております。合宿では記号創発システム論について様々な分野の先生方がどのような考えや応用可能性をお考えなのかお話を伺えることを楽しみにしております。
+</div>
+<div class="link-group">
+<a href="https://sites.google.com/site/hirokiarato/" target="_blank">https://sites.google.com/site/hirokiarato/</a>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<div class="profile-image no-image">廣</div>
+</div>
+<div class="card-body">
+<h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">廣瀬 百葉</h3>
+<div class="tag-container mb-3">
+<span class="tag">集合的予測符号化、記号創発、分散的ベイズ推論、民主主義、意思決定、社会</span>
+</div>
+<div class="quote mb-3">
+・CPCと民主主義、意思決定の接続
+・社会におけるCPCの具体的な実装可能性
+</div>
+<div class="mt-3 text-italic">
+皆さん、はじめまして。昨年10月より、谷口研究室で記号創発・CPCと民主主義について研究しています。今回の合宿では、学際的な議論に参加し、普段の研究室とはまた一味違った刺激を3日間で可能な限り受けて、ビジョンを深められることが楽しみです。よろしくお願いいたします。
+
+皆さん、はじめまして。昨年10月から谷口研究室で記号創発・CPCと民主主義について研究しています。今回の合宿では、学際的な議論に参加し、普段の研究室生活とは異なる視点や刺激を得ながら、3日間でビジョンを広げることを楽しみにしています。どうぞよろしくお願いいたします。
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<div class="profile-image no-image">鈴</div>
+</div>
+<div class="card-body">
+<h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">鈴木雅大</h3>
+<div class="tag-container mb-3">
+<span class="tag">世界モデル</span><span class="tag">深層生成モデル</span><span class="tag">能動的推論</span><span class="tag">自由エネルギー原理</span><span class="tag">集団的予測符号化</span>
+</div>
+<div class="quote mb-3">
+- 集合的予測符号化（さらに自由エネルギー原理）と哲学との関連
+- 能動的推論と表現学習
+- LLMは現実世界で動作するロボットを実現する上で十分なのか
+</div>
+<div class="mt-3 text-italic">
+東京大学松尾・岩澤研で特任講師をしている鈴木雅大です．専門は深層学習，特に深層生成モデルや世界モデルに関する研究をしています．最近では自由エネルギー原理（特に能動的推論）と表現学習との関連や，予測符号化に基づくニューラルネットワークの学習に関する研究もしています．今回の合宿では，深層学習川の観点から，様々な領域の方と議論して自分の研究領域を深めたり集合的予測符号化の発展に貢献できればと思っています．よろしくお願いいたします．
+</div>
+<div class="link-group">
+<a href="Xアカウント：https://x.com/szk_masa，　webサイト：https://masa-suzuki.com/" target="_blank">Xアカウント：https://x.com/szk_masa，　webサイト：https://masa-suzuki.com/</a>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<div class="profile-image no-image">上</div>
+</div>
+<div class="card-body">
+<h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">上田亮</h3>
+<div class="tag-container mb-3">
+<span class="tag">ゲーム理論</span><span class="tag">進化ゲーム理論</span><span class="tag">社会シミュレーション</span><span class="tag">社会言語学</span><span class="tag">複雑系科学</span>
+</div>
+<div class="quote mb-3">
+記号創発の考え方を使って現存する社会問題を記述することができるかどうかということに興味があります。
+</div>
+<div class="mt-3 text-italic">
+言語創発（Language Emergence）の研究をしています。創発言語が人間の言語と同様の統計的普遍性質をもつようにするにはどうすればよいかに興味があります。最近は複雑系科学、カオスの縁に興味があります。
+</div>
+<div class="papers">https://openreview.net/forum?id=b4t9_XASt6G</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<div class="profile-image no-image">谷</div>
+</div>
+<div class="card-body">
+<h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">谷島貫太</h3>
+<div class="tag-container mb-3">
+<span class="tag">記号論、技術哲学、痕跡、表象、パース</span>
+</div>
+<div class="quote mb-3">
+外的表象と内的表象の関係、確率論ベースの表象概念、テキスト解釈ベースの人文学の営為と集合的予測符号化
+</div>
+<div class="mt-3 text-italic">
+谷島貫太と申します。技術哲学や記号論をベースとして、広くメディア事象に関わる研究をしています。最近は、メディア産業における流通の問題、パース記号論におけるインデックス概念の展開などに興味を持っています。加えてより大きなところでは、記号論の文脈に確率論的なモデルを導入することで、より生産的に多領域と接続していけるような記号論のあり方も考えたいと思っています。今回の合宿では、この最後の点が特にみなさまとの接点になるかと思います。どうぞよろしくお願いいたします。
+</div>
+<div class="link-group">
+<a href="https://x.com/kanta_tanishima" target="_blank">https://x.com/kanta_tanishima</a>
+</div>
+<div class="papers">生態学的な指標概念について――シルヴァスティンによる指標論の記号論的検討を通して
+https://www.jstage.jst.go.jp/article/semioticstudies/2/0/2_1/_article/-char/ja/
+
+予測処理理論による〈痕跡〉概念の再解釈：記号の確率論的理解に向けて（発表スライド）
+https://speakerdeck.com/ktanishima/yu-ce-chu-li-li-lun-niyoru-hen-ji-gai-nian-nozai-jie-shi-ji-hao-noque-lu-lun-de-li-jie-nixiang-kete
+
+ポストメタデータ時代のデジタルアーカイブ ―ジャック・デリダの〈痕跡〉概念をめぐって―
+https://speakerdeck.com/ktanishima/posutometadetashi-dai-nodezitaruakaibu-ziyatukuderidano-hen-ji-gai-nian-womegutute</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<div class="profile-image no-image">坂</div>
+</div>
+<div class="card-body">
+<h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">坂本航太郎</h3>
+<div class="tag-container mb-3">
+<span class="tag">ゲーム理論</span><span class="tag">大規模言語モデル</span><span class="tag">ロボティクス</span><span class="tag">文化進化</span><span class="tag">マルチエージェント</span><span class="tag">社会シミュレーション</span><span class="tag">デジタル民主主義</span><span class="tag">(Plurality)</span><span class="tag">科学哲学</span>
+</div>
+<div class="quote mb-3">
+人類が今後の特にAGIによる社会構造の変化に対してどのように適応していくか？
+</div>
+<div class="mt-3 text-italic">
+大規模言語モデルや拡散モデルの相転移現象や自己進化・事後学習パラダイムに特に興味を持っています．
+</div>
+<div class="papers">「拡散モデルの幾何：管状近傍と特異点」The Geometry of Diffusion Models: Tubular Neighbourhoods and Singularities
+https://proceedings.mlr.press/v251/sakamoto24a.html
+
+「統合情報量から見た群れのサイズと情報の流れの非対称性の関係」Finding continuity and discontinuity in fish schools via integrated information theory
+https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0229573
+
+「新規性ゲーム」Creativity Has Entered the Chat, With a Stranger: Novelty is a Nash Equilibrium
+https://openreview.net/forum?id=a9Q6VIi4zQ&referrer=%5Bthe%20profile%20of%20Yutaka%20Matsuo%5D(%2Fprofile%3Fid%3D~Yutaka_Matsuo1)</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<div class="profile-image no-image">谷</div>
+</div>
+<div class="card-body">
+<h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">谷口忠大</h3>
+<div class="tag-container mb-3">
+<span class="tag">ロボティクス、大規模言語モデル、コミュニケーション創発、AIアライメント、人間AI共生社会</span>
+</div>
+<div class="quote mb-3">
+AI、ALIFE、ロボティクス、記号論、社会学、哲学といった各種のフィールドで具体的な成果をあげていく道筋。記号創発システムと集合的予測符号化のそれぞれの分野での展開。より具体的に集合的予測符号化仮説を実証していくにはどうすればよいか。どのような学術的・産業的価値を具体的に生み出していけるか。これから明らかにしていく研究課題のプログラム（ヒルベルトプログラム的なもの）。国際的な研究ネットワーク形成の戦略。セミナーや勉強会、学会、出版物、メディアなどのこれからの具体的な展開。
+</div>
+<div class="mt-3 text-italic">
+発起人の谷口忠大です。人間と知能の本質に迫るために記号接地問題の抱える問題、ロボティクス（機械）とAI（情報）の接合における溝、他者の意図理解や自由意志・意識の存在、言語学が実世界の知覚・経験を扱えていないのではないか問題、社会構成主義の抱える問題、などなど様々な問いの結節点・一般理論としての記号創発システム論の着想に至るまでと至ってから合計２０年くらいの旅路の果てにこういうメルクマールとなる研究会を企画できて望外の喜びです。ここから始まる旅路の議論を皆さんとできれば幸いです。
+</div>
+<div class="link-group">
+<a href="X: https://x.com/tanichu" target="_blank">X: https://x.com/tanichu</a>
+</div>
+<div class="papers">谷口忠大（編著），記号創発システム論 （新曜社） 2024
+谷口忠大，「集合的予測符号化に基づく言語と認知のダイナミクス： 記号創発ロボティクスの新展開に向けて」2024
+Taniguchi, T., Ueda, R., Nakamura, T., Suzuki, M., & Taniguchi, A. (2024). Generative Emergent Communication: Large Language Model is a Collective World Model. arXiv preprint arXiv:2501.00226.</div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<div class="profile-image no-image">林</div>
+</div>
+<div class="card-body">
+<h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">林祐輔</h3>
+<div class="tag-container mb-3">
+<span class="tag">集団的予測符号化，能動的推論，自由エネルギー原理，大規模言語モデル，AIアライメント，人間AI共生社会</span>
+</div>
+<div class="quote mb-3">
+集団的予測符号化（CPC）における外的表象の更新メカニズム，集団に対して定義された自由エネルギーと実在性（物理学の諸理論から導出可能か？），シャノンの通信理論とCPCの差分，CPCにおけるヒルベルト・プログラムは何か？
+</div>
+<div class="mt-3 text-italic">
+副実行委員長の林祐輔です．私の経歴を振り返ってみると，エージェントの数理的／物理的構成に強い関心を持ち続けてきたと思います．九州大学大学院在籍時には初期宇宙やブラックホールの内外における量子もつれをテーマに研究を進め，「観測者は物理モデルとして位置づけられていない」という問題意識を抱きました．その後，日本銀行に就職し，経済主体—すなわち国民や企業—の合理的な意思決定モデルがいまだ確立されていない現実を痛感する日々を送りました．現在は，AIアライメントネットワークの一員として，人間とAIエージェントが共生的に振る舞う条件（共生的アライメント）を探究しています．京都大学の谷口忠大教授が提唱する「集合的予測符号化」を用いながら，人間とAIが対等に相互作用し，適切な意思決定を分かち合える社会のデザインに寄与すべく研究を続けています
+</div>
+<div class="link-group">
+<a href="𝕏: https://x.com/hayashiyus" target="_blank">𝕏: https://x.com/hayashiyus</a>
+</div>
+<div class="papers">「Collective Predictive Coding as Model of Science: Formalizing Scientific Activities Towards Generative Science」
+https://arxiv.org/abs/2409.00102
+
+「From Collective Predictive Coding to Human--AI Synergy: A Comprehensive Formulation」
+https://openreview.net/forum?id=RPPNDX2WLf
+
+「Universal AI maximizes Variational Empowerment」
+https://arxiv.org/abs/2502.15820</div>
+</div>
+</div>
+</div>
+</main>
+<div class="wave-bg"></div>
+<footer class="footer mt-6 pt-5 pb-5">
+<div class="container">
+<p>© 2025 CPC合宿</p>
+</div>
+</footer>
+</body>
+</html>
