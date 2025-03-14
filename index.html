@@ -280,8 +280,13 @@
             padding: var(--space-3);
             border-radius: var(--border-radius-sm);
             white-space: normal;
+            overflow-wrap: break-word;
+            /* 単語単位で折り返し可能にする */
+            word-break: break-all;
+            /* URLなども途中で強制的に折り返す */
             margin-top: var(--space-3);
         }
+
 
         .wave-bg {
             position: fixed;
