@@ -450,6 +450,14 @@
         </div>
     </header>
     <main class="container mt-6">
+        <div class="wordcloud-container all-tags mb-4">
+            <div class="all-tags-title" id="toggle-wordcloud">
+                事前アンケートから得られたワードクラウド <span class="toggle-icon">▼</span>
+            </div>
+            <div id="wordcloud-content" style="display: none;">
+                <img src="wordcloud.png" alt="アンケートワードクラウド" style="width: 100%; max-width: 800px; margin: 1rem auto; display: block;">
+            </div>
+        </div>
         <div class="all-tags">
             <div class="all-tags-title" id="toggle-tags">
                 タグで絞り込む <span class="toggle-icon">▼</span>
@@ -1613,6 +1621,7 @@
         </div>
     </footer>
     <script src="index.js"></script>
+    
 </body>
 
 </html>

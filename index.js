@@ -1,4 +1,22 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // ワードクラウドトグル機能の追加
+    const toggleWordcloud = document.getElementById('toggle-wordcloud');
+    const wordcloudContent = document.getElementById('wordcloud-content');
+    
+    if (toggleWordcloud) {
+        toggleWordcloud.addEventListener('click', function() {
+            const toggleIcon = this.querySelector('.toggle-icon');
+            
+            if (wordcloudContent.style.display === 'none') {
+                wordcloudContent.style.display = 'block';
+                toggleIcon.textContent = '▲';
+            } else {
+                wordcloudContent.style.display = 'none';
+                toggleIcon.textContent = '▼';
+            }
+        });
+    }
+
     // 全てのタグを収集
     const allTags = new Set();
     document.querySelectorAll('.card .tag').forEach(tag => {
@@ -123,4 +141,4 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 初期UIを設定
     updateUI();
-  });
+});
