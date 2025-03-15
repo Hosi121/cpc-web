@@ -385,6 +385,60 @@
         .link-label {
             display: none;
         }
+
+        コピー.tag {
+            cursor: pointer;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        .tag:hover {
+            background-color: var(--primary-blue);
+            color: white;
+        }
+
+        .tag.active {
+            background-color: var(--deep-blue);
+            color: white;
+        }
+
+        .active-filters {
+            background-color: var(--white);
+            border-radius: var(--border-radius-md);
+            padding: var(--space-3);
+            margin-bottom: var(--space-4);
+            box-shadow: var(--shadow-sm);
+            display: none;
+        }
+
+        .active-filters.visible {
+            display: block;
+        }
+
+        .all-tags {
+            background-color: var(--white);
+            border-radius: var(--border-radius-md);
+            padding: var(--space-3);
+            margin-bottom: var(--space-4);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .all-tags-title {
+            font-weight: bold;
+            margin-bottom: var(--space-2);
+            color: var(--deep-blue);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .toggle-icon {
+            font-size: 0.8rem;
+        }
+
+        .card.hidden {
+            display: none;
+        }
     </style>
 </head>
 
@@ -396,6 +450,21 @@
         </div>
     </header>
     <main class="container mt-6">
+        <div class="all-tags">
+            <div class="all-tags-title" id="toggle-tags">
+                タグで絞り込む <span class="toggle-icon">▼</span>
+            </div>
+            <div class="tag-container" id="all-tags-container" style="display: none;">
+                <!-- JavaScriptで動的に生成されます -->
+            </div>
+        </div>
+        <div class="active-filters" id="active-filters">
+            <div id="active-tags-container"></div>
+            <button class="clear-all" id="clear-all">すべて解除</button>
+        </div>
+        <div class="no-results" id="no-results">
+            <p>該当するメンバーが見つかりませんでした。</p>
+        </div>
         <div class="grid grid-cols-auto">
             <div class="card">
                 <div class="card-header">
@@ -405,7 +474,8 @@
                     <h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">大塚淳</h3>
                     <div class="social-icons">
                         <a href="https://x.com/junotk_jp" target="_blank" class="social-icon twitter-icon"></a>
-                        <a href="https://www.philosophy.bun.kyoto-u.ac.jp/junotk/" target="_blank" class="social-icon website-icon"></a>
+                        <a href="https://www.philosophy.bun.kyoto-u.ac.jp/junotk/" target="_blank"
+                            class="social-icon website-icon"></a>
                     </div>
                     <div class="tag-container mb-3">
                         <span class="tag">科学哲学</span><span class="tag">統計学</span><span class="tag">機械学習</span><span
@@ -435,7 +505,8 @@
                     <h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">片岩拓也</h3>
                     <div class="social-icons">
                         <a href="https://x.com/jirava_t" target="_blank" class="social-icon twitter-icon"></a>
-                        <a href="https://hosi121.github.io/portfolio/" target="_blank" class="social-icon website-icon"></a>
+                        <a href="https://hosi121.github.io/portfolio/" target="_blank"
+                            class="social-icon website-icon"></a>
                     </div>
                     <div class="tag-container mb-3">
                         <span class="tag">記号論</span><span class="tag">集団的予測符号化</span><span class="tag">ゲーム理論</span><span
@@ -464,8 +535,10 @@
                     <h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">丸山隆一</h3>
                     <div class="social-icons">
                         <a href="https://x.com/rmaruy" target="_blank" class="social-icon twitter-icon"></a>
-                        <a href="https://note.com/symbol_emerg" target="_blank" class="social-icon website-icon" title="記号創発スタディノート"></a>
-                        <a href="https://www.youtube.com/playlist?list=PLZ3ERUqlfpWFOOyGYKMnFtWgpkP4-qVuG" target="_blank" class="social-icon website-icon" title="記号創発クロストーク"></a>
+                        <a href="https://note.com/symbol_emerg" target="_blank" class="social-icon website-icon"
+                            title="記号創発スタディノート"></a>
+                        <a href="https://www.youtube.com/playlist?list=PLZ3ERUqlfpWFOOyGYKMnFtWgpkP4-qVuG"
+                            target="_blank" class="social-icon website-icon" title="記号創発クロストーク"></a>
                     </div>
                     <div class="tag-container mb-3">
                     </div>
@@ -489,7 +562,8 @@
                 <div class="card-body">
                     <h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">濱田太陽</h3>
                     <div class="social-icons">
-                        <a href="https://sites.google.com/view/hirotaiyohamada/about" target="_blank" class="social-icon website-icon"></a>
+                        <a href="https://sites.google.com/view/hirotaiyohamada/about" target="_blank"
+                            class="social-icon website-icon"></a>
                     </div>
                     <div class="tag-container mb-3">
                         <span class="tag">記号幾何論</span><span class="tag">マルチエージェントとシングルエージェントの複数LLMと言語ゲームの関係性</span>
@@ -536,7 +610,8 @@
                     <h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">堀部和也</h3>
                     <div class="social-icons">
                         <a href="https://x.com/khoribe3" target="_blank" class="social-icon twitter-icon"></a>
-                        <a href="https://kazuya-horibe.netlify.app/en/" target="_blank" class="social-icon website-icon"></a>
+                        <a href="https://kazuya-horibe.netlify.app/en/" target="_blank"
+                            class="social-icon website-icon"></a>
                     </div>
                     <div class="tag-container mb-3">
                         <span class="tag">文化進化</span><span class="tag">社会学習</span><span class="tag">メタゲーム</span><span
@@ -564,7 +639,8 @@
                     <h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">吉田尚人</h3>
                     <div class="social-icons">
                         <a href="https://x.com/movingsloth" target="_blank" class="social-icon twitter-icon"></a>
-                        <a href="https://sites.google.com/view/movingsloth/home" target="_blank" class="social-icon website-icon"></a>
+                        <a href="https://sites.google.com/view/movingsloth/home" target="_blank"
+                            class="social-icon website-icon"></a>
                     </div>
                     <div class="tag-container mb-3">
                         <span class="tag">強化学習</span><span class="tag">恒常性</span><span class="tag">身体性</span><span
@@ -649,8 +725,10 @@
                 <div class="card-body">
                     <h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">谷口彰</h3>
                     <div class="social-icons">
-                        <a href="https://www.facebook.com/akira.taniguchi.37b/" target="_blank" class="social-icon website-icon"></a>
-                        <a href="https://sites.google.com/site/ataniguchi0403/" target="_blank" class="social-icon website-icon"></a>
+                        <a href="https://www.facebook.com/akira.taniguchi.37b/" target="_blank"
+                            class="social-icon website-icon"></a>
+                        <a href="https://sites.google.com/site/ataniguchi0403/" target="_blank"
+                            class="social-icon website-icon"></a>
                     </div>
                     <div class="tag-container mb-3">
                         <span class="tag">言語創発</span><span class="tag">記号創発ロボティクス</span><span
@@ -836,7 +914,8 @@
                     <h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">久保田はな</h3>
                     <div class="social-icons">
                         <a href="https://x.com/veloce_ponty" target="_blank" class="social-icon twitter-icon"></a>
-                        <a href="https://gyoseki.ritsumei.ac.jp/ritgshp/k03/resid/S009933;jsessionid=1C72092388A8C18A79CC528C7732EAB8" target="_blank" class="social-icon website-icon"></a>
+                        <a href="https://gyoseki.ritsumei.ac.jp/ritgshp/k03/resid/S009933;jsessionid=1C72092388A8C18A79CC528C7732EAB8"
+                            target="_blank" class="social-icon website-icon"></a>
                     </div>
                     <div class="tag-container mb-3">
                         <span class="tag">現象学</span><span class="tag">表象</span><span class="tag">時間論</span><span
@@ -1029,8 +1108,10 @@
                 <div class="card-body">
                     <h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">福島 俊一</h3>
                     <div class="social-icons">
-                        <a href="https://www.facebook.com/toshikazu.fukushima" target="_blank" class="social-icon website-icon"></a>
-                        <a href="https://www.instagram.com/fudao3/" target="_blank" class="social-icon website-icon"></a>
+                        <a href="https://www.facebook.com/toshikazu.fukushima" target="_blank"
+                            class="social-icon website-icon"></a>
+                        <a href="https://www.instagram.com/fudao3/" target="_blank"
+                            class="social-icon website-icon"></a>
                     </div>
                     <div class="tag-container mb-3">
                         <span class="tag">記号・言語の獲得・創発</span>
@@ -1060,8 +1141,10 @@
                 <div class="card-body">
                     <h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">上野裕太郎</h3>
                     <div class="social-icons">
-                        <a href="https://sites.google.com/view/yutaro0518/" target="_blank" class="social-icon website-icon"></a>
-                        <a href="https://www.facebook.com/yutaro0518" target="_blank" class="social-icon website-icon"></a>
+                        <a href="https://sites.google.com/view/yutaro0518/" target="_blank"
+                            class="social-icon website-icon"></a>
+                        <a href="https://www.facebook.com/yutaro0518" target="_blank"
+                            class="social-icon website-icon"></a>
                     </div>
                     <div class="tag-container mb-3">
                         <span class="tag">理論社会学</span><span class="tag">ニクラス・ルーマン</span><span
@@ -1218,7 +1301,8 @@
                 <div class="card-body">
                     <h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">椋本 輔</h3>
                     <div class="social-icons">
-                        <a href="https://digital-narcis.org/Tasuku-MUKUMOTO/" target="_blank" class="social-icon website-icon"></a>
+                        <a href="https://digital-narcis.org/Tasuku-MUKUMOTO/" target="_blank"
+                            class="social-icon website-icon"></a>
                     </div>
                     <div class="tag-container mb-3">
                         <span class="tag">記号論</span><span class="tag">プラグマティズム</span><span
@@ -1277,7 +1361,8 @@
                     <h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">進藤稜真</h3>
                     <div class="social-icons">
                         <a href="https://x.com/shinto_ai" target="_blank" class="social-icon twitter-icon"></a>
-                        <a href="https://sites.google.com/view/ryoma-shinto" target="_blank" class="social-icon website-icon"></a>
+                        <a href="https://sites.google.com/view/ryoma-shinto" target="_blank"
+                            class="social-icon website-icon"></a>
                     </div>
                     <div class="tag-container mb-3">
                         <span class="tag">大規模言語モデル</span><span class="tag">言語獲得</span><span
@@ -1308,7 +1393,8 @@
                 <div class="card-body">
                     <h3 class="text-md font-bold mb-2" style="color: var(--deep-blue);">荒戸 寛樹</h3>
                     <div class="social-icons">
-                        <a href="https://sites.google.com/site/hirokiarato/" target="_blank" class="social-icon website-icon"></a>
+                        <a href="https://sites.google.com/site/hirokiarato/" target="_blank"
+                            class="social-icon website-icon"></a>
                     </div>
                     <div class="tag-container mb-3">
                         <span class="tag">集団的予測符号化</span><span class="tag">ゲーム理論</span><span
@@ -1526,6 +1612,7 @@
             <p>© 2025 CPC合宿</p>
         </div>
     </footer>
+    <script src="index.js"></script>
 </body>
 
 </html>
