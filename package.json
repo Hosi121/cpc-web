@@ -1,0 +1,7 @@
+{
+  "name": "cpc-web",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/minify.js"
+  }
+}
