@@ -97,8 +97,8 @@ function minifyHTML(html) {
   // update asset refs
   html = html.replace('href="style.css"', 'href="style.min.css"')
              .replace('src="index.js"', 'src="index.min.js"');
-  // collapse whitespace between tags and multiple spaces
-  html = html.replace(/>\s+</g, '><').replace(/\s{2,}/g, ' ').trim();
+  // collapse whitespace only between tags (preserve text newlines)
+  html = html.replace(/>\s+</g, '><').trim();
   return html;
 }
 
@@ -123,4 +123,3 @@ function main() {
 }
 
 main();
-

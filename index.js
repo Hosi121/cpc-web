@@ -139,6 +139,28 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
     
+    // 論文欄の整形（URL自動リンク＋行を箇条書き）
+    function formatPapers() {
+      const urlRegex = /(https?:\/\/[^\s)<>"']+)/g;
+      document.querySelectorAll('.papers').forEach(container => {
+        const raw = container.textContent || '';
+        const lines = raw.split(/\r?\n/).map(l => l.trim()).filter(Boolean);
+        if (lines.length === 0) return;
+        const ul = document.createElement('ul');
+        ul.className = 'papers-list';
+        lines.forEach(line => {
+          // Preserve original numbering or dashes; just autolink URLs
+          const htmlLine = line.replace(urlRegex, url => `<a href="${url}" target="_blank" rel="noopener">${url}</a>`);
+          const li = document.createElement('li');
+          li.innerHTML = htmlLine;
+          ul.appendChild(li);
+        });
+        container.innerHTML = '';
+        container.appendChild(ul);
+      });
+    }
+
     // 初期UIを設定
     updateUI();
+    formatPapers();
 });
