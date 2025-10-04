@@ -139,22 +139,80 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
     
-    // 論文欄の整形（URL自動リンク＋行を箇条書き）
+    // 論文欄の整形（柔軟な文法：番号/タイトル/リンク行をまとめる＋URL自動リンク）
     function formatPapers() {
-      const urlRegex = /(https?:\/\/[^\s)<>"']+)/g;
+      const urlRegex = /(https?:\/\/[\w!#$%&'()*+,./:;=?@\[\]-]+)/g;
+      const trimTrailPunc = (s) => s.replace(/[)\]\}〉》】＞、。，．。.,]+$/u, '');
+      const isNewItem = (line) => /^(タイトル[:：]|\d+[\.．)]\s*|\(\d+\)\s*|（\d+）\s*|[①-⑳]\s*|[・•]\s*|-\s*)/.test(line);
+      const stripPrefix = (line) => line
+        .replace(/^タイトル[:：]\s*/, '')
+        .replace(/^\d+[\.．)]\s*/, '')
+        .replace(/^\(\d+\)\s*/, '')
+        .replace(/^（\d+）\s*/, '')
+        .replace(/^[①-⑳]\s*/, '')
+        .replace(/^[・•]\s*/, '')
+        .replace(/^-\s*/, '')
+        .trim();
+
       document.querySelectorAll('.papers').forEach(container => {
-        const raw = container.textContent || '';
-        const lines = raw.split(/\r?\n/).map(l => l.trim()).filter(Boolean);
-        if (lines.length === 0) return;
+        const raw = (container.textContent || '').replace(/\r\n/g, '\n');
+        const lines = raw.split(/\n/).map(l => l.trim()).filter(l => l.length);
+        if (!lines.length) return;
+
+        const items = [];
+        let cur = null;
+        const pushCur = () => { if (cur) items.push(cur); };
+
+        lines.forEach(line => {
+          const linkLine = line.replace(/^リンク[:：]\s*/, '');
+          const urls = (linkLine.match(urlRegex) || []).map(u => trimTrailPunc(u));
+          const startsNew = isNewItem(line) || /^タイトル[:：]/.test(line) || /^リンク[:：]/.test(line);
+
+          if (startsNew && !/^リンク[:：]/.test(line)) {
+            pushCur();
+            cur = { title: stripPrefix(line), links: [] };
+            if (urls.length && !/^タイトル[:：]/.test(line)) {
+              cur.links.push(...urls);
+            }
+          } else if (/^リンク[:：]/.test(line)) {
+            if (!cur) cur = { title: '', links: [] };
+            cur.links.push(...urls);
+          } else {
+            if (!cur) cur = { title: '', links: [] };
+            if (urls.length) {
+              cur.links.push(...urls);
+            } else {
+              cur.title = (cur.title ? cur.title + ' ' : '') + stripPrefix(line);
+            }
+          }
+        });
+        pushCur();
+
         const ul = document.createElement('ul');
         ul.className = 'papers-list';
-        lines.forEach(line => {
-          // Preserve original numbering or dashes; just autolink URLs
-          const htmlLine = line.replace(urlRegex, url => `<a href="${url}" target="_blank" rel="noopener">${url}</a>`);
+        items.forEach(it => {
           const li = document.createElement('li');
-          li.innerHTML = htmlLine;
-          ul.appendChild(li);
+          if (it.title) {
+            const titleSpan = document.createElement('span');
+            titleSpan.className = 'paper-title';
+            titleSpan.textContent = it.title;
+            li.appendChild(titleSpan);
+          }
+          if (it.links && it.links.length) {
+            if (it.title) li.appendChild(document.createTextNode(' '));
+            it.links.forEach((u, idx) => {
+              const a = document.createElement('a');
+              a.href = u;
+              a.target = '_blank';
+              a.rel = 'noopener';
+              a.textContent = u;
+              li.appendChild(a);
+              if (idx !== it.links.length - 1) li.appendChild(document.createTextNode(' / '));
+            });
+          }
+          if (li.textContent.trim().length) ul.appendChild(li);
         });
+
         container.innerHTML = '';
         container.appendChild(ul);
       });

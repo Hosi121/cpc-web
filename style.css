@@ -208,6 +208,9 @@ a:hover {
 .papers .papers-list li {
     margin-bottom: 0.25rem;
 }
+.papers .paper-title {
+    font-weight: 500;
+}
 
 .wave-bg {
     position: fixed;
